@@ -1,0 +1,64 @@
+// admin-header
+.admin-header
+	font-size: 0
+	height: 75px
+	background: #FFF
+	border: 1px solid #3d566e
+	border-bottom: none
+	&__logo
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		line-height: 73px
+		width: 113px
+		img
+			vertical-align: middle
+	&__title
+		display: inline-block
+		background: #0DB597 
+		width: 885px	
+		p
+			color: #FFF
+			text-transform: uppercase 
+			font: bold 17px "Open Sans", sans-serif
+			line-height: 75px
+			margin-left: 30px
+
+
+// main
+.admin-menu
+	list-style-type: none
+	background: #3D566E 
+	height: 50px
+	font: bold 13px "Open Sans", sans-serif 
+	text-transform: uppercase
+	+clr
+	li
+		float: left
+		border: 1px solid #3D566E
+		background: #DC6053
+		&:hover
+			background: #ED6456
+		a
+			display: block
+			text-decoration: none	
+			line-height: 48px
+			color: #FFF  
+			padding: 0 40px 
+		&.is-active
+			background: #FFF
+			border-bottom: none
+			a
+				color: #000
+				text-decoration: none
+.advertising
+	float: right
+	margin-right: 40px
+	line-height: 50px
+	color: #FFF
+	&:hover
+		color: #C6D5E3 
+
+.create-poll
+	border: 1px solid #3d566e
+	border-top: none

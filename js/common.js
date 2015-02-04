@@ -15,5 +15,18 @@ head.ready(function() {
 	//     scrollFixedElements()
 	// });
 
+	$(".js-change").click(function(){
+		$(".profile__name").css("display", "none");
+		$(".js-change-name").css("display", "block");
+		return false
+	});
+
+	$(".js-add").click(function(){
+		$(".faculty__add").css("display", "none");
+		$(".js-add-fac").css("display", "inline-block");
+		return false
+	});
+
 	console.log($('body').html());
 });
+
