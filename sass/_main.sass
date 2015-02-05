@@ -1,13 +1,16 @@
 // Normally mainpage styles
 body
 	width: 1000px
-	
+	color: $grey
+
+// 
+// index
+// 
 .out_index
 	background: url(../img/bg.jpg) no-repeat
 	-webkit-background-size: cover
 	-o-background-size: cover
 	background-size: cover
-
 // page-header
 .page-header
 	height: 180px
@@ -25,6 +28,7 @@ body
 .profile
 	display: inline-block
 	margin-top: 1px
+	+opensans
 	&__userpic
 		display: inline-block
 	&__info
@@ -32,7 +36,7 @@ body
 		vertical-align: top
 		width: 640px
 	&__top
-		background: #0DB597
+		background: $green
 		height: 74px 
 		text-transform: uppercase
 		padding: 20px 40px 0 30px 
@@ -43,7 +47,8 @@ body
 		p
 			color: #FFF
 			margin-bottom: 5px 
-			font: bold 13px "Open Sans", sans-serif
+			font-weight: bold 
+			font-size: 13px
 		span
 			display: inline-block
 			vertical-align: top
@@ -52,8 +57,8 @@ body
 		a
 			color: #004e40
 			text-decoration: underline
-			text-transform: none
-			font: 11px "Open Sans", sans-serif
+			text-transform: none 
+			font-size: 11px
 			&:hover
 				color: #002B23 
 	&__bonuses
@@ -66,21 +71,22 @@ body
 			+s(bonuses)
 		a
 			color: #FFF 
-			font: bold 17px "Open Sans", sans-serif
+			font-weight: bold 
+			font-size: 17px
 			&:hover
 				color: #89FAE6 
 	&__bottom
 		height: 105px
-		color: #333
 		padding: 15px 25px 
 		background: #FFF 
 		+box
 		h4
-			font: bold 13px "Open Sans", sans-serif
+			font-weight: bold 
+			font-size: 13px
 			display: inline-block
 			padding-right: 5px
-		p
-			font: 13px "Open Sans", sans-serif
+		p 
+			font-size: 13px
 			display: inline-block
 .faculty
 	padding: 10px 0
@@ -91,20 +97,22 @@ body
 		margin-right: 3px
 		+s(add_fac)
 	a
-		color: #3D566E
+		color: $blue
 		text-decoration: underline
-		display: inline-block
-		font: 11px "Open Sans", sans-serif
+		display: inline-block 
+		font-size: 11px
+		+opensans
 		&:hover
-			color: #152B3F 
+			color: $blue-h 
 	&__add
 		display: inline-block
 .profile__change
 	display: none
 	a 
-		color: #3D566E 
-		display: inline-block
-		font: 11px "Open Sans", sans-serif 
+		color: $blue 
+		display: inline-block 
+		font-size: 11px 
+		+opensans
 .profile__change-name
 	float: left
 	a	
@@ -117,7 +125,7 @@ body
 	background: #EDEDED
 	+box 
 	+placeholder
-		color: #333 
+		color: $grey 
 		text-transform: uppercase
 	&_name
 		width: 360px
@@ -141,21 +149,24 @@ span.savechange
 	padding-top: 35px
 	color: #FFF 
 	height: 165px
+	+opensans
 	h4
-		font: bold 17px "Open Sans", sans-serif
+		font-weight: bold 
+		font-size: 17px
 		margin-bottom: 20px
 	p
-		font: 13px "Open Sans", sans-serif 
+		font-size: 13px
 
 .polls-title
 	background: url(../img/polls_bg.png) no-repeat 
 	margin-top: -30px
 	padding: 60px 0 35px
-	-webkit-box-shadow: 0 10px 20px -10px #333 
-	box-shadow: 0 10px 20px -10px #333 
+	-webkit-box-shadow: 0 10px 20px -10px $grey 
+	box-shadow: 0 10px 20px -10px $grey
 	h3
-		font: bold 17px "Open Sans", sans-serif 
-		color: #333 
+		font-weight: bold 
+		font-size: 17px
+		+opensans 
 		text-transform: uppercase
 		margin-bottom: 35px
 .polls
@@ -172,24 +183,27 @@ span.savechange
 		height: 320px
 		background: #FFF 
 		text-transform: uppercase
+		+opensans
 		h2
 			margin-top: 20px
 			line-height: 20px
-			font: bold 13px "Open Sans", sans-serif 
+			font-weight: bold 
+			font-size: 13px 
 		a
 			position: absolute
 			bottom: 0
 			color: #FFF
-			font: bold 14px "Open Sans", sans-serif
+			font-weight: bold 
+			font-size: 14px
 			text-align: center
 			display: inline-block
-			background: #DC6053 
+			background: $red 
 			height: 40px
 			width: 100% 
 			line-height: 40px
 			text-decoration: none
 			&:hover
-				background: #ED6456 
+				background: $red-h 
 	&__main
 		margin: 20px
 	&__arr
@@ -205,13 +219,338 @@ span.savechange
 			+s(arr-right)
 			&:hover
 				display: inline-block
-				+s(arr-right-hover)
+				+s(arr-right-h)
 
 // page-footer
 .page-footer
-	background: #3D566E 
+	background: $blue 
 	height: 45px
 .copyright
 	color: #FFF 
 	p
 		line-height: 45px
+		
+
+// 
+// admin_create
+// 
+input, select
+	background: #F4F4F4 
+	border: 1px solid #d5d5d5
+	padding-left: 10px
+	+box
+
+// admin-header
+.admin-header
+	font-size: 0
+	height: 75px
+	background: #FFF
+	border: 1px solid $blue
+	border-bottom: none
+	&__logo
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		line-height: 73px
+		width: 113px
+		img
+			vertical-align: middle
+	&__title
+		display: inline-block
+		background: $green 
+		width: 885px	
+		p
+			color: #FFF
+			text-transform: uppercase 
+			font-weight: bold 
+			font-size: 17px
+			line-height: 75px
+			margin-left: 30px
+			+opensans
+
+// main
+.admin-menu
+	background: $blue
+	height: 50px
+	font-weight: bold 
+	font-size: 13px
+	text-transform: uppercase
+	+opensans
+	+clr
+	li
+		float: left
+		margin-top: 1px
+		border-left: 1px solid $blue
+		background: $red
+		&:hover
+			background: $red-h
+		a
+			display: block
+			text-decoration: none	
+			line-height: 48px
+			color: #FFF  
+			padding: 0 40px 
+		&.is-active
+			background: #FFF
+			border-bottom: none
+			height: 49px
+			a
+				color: #000
+				text-decoration: none
+.advertising
+	float: right
+	margin-right: 40px
+	line-height: 50px
+	color: #FFF
+	&:hover
+		color: #C6D5E3 
+
+.create-poll
+	border: 1px solid $blue
+	border-top: none
+	font-size: 13px
+	+opensans
+	&__top
+		border-bottom: 1px solid $blue
+	&__bottom
+		font-size: 0
+	&__wrap
+		position: relative
+		display: inline-block
+		vertical-align: top
+		margin: 10px 0 25px 
+	&__in
+		h4
+			display: block
+			margin: 20px 0
+			font-weight: bold
+		input, select
+			height: 25px
+	&__name 
+		width: 693px
+		input
+			width: 693px
+	&__bonus
+		margin-right: 30px
+		display: inline-block
+		select
+			width: 190px
+	&__link
+		display: inline-block
+		input	
+			width: 470px
+	&__tags
+		margin-right: 30px
+		display: inline-block
+		vertical-align: top
+		select
+			width: 195px
+			margin-bottom: 10px
+			display: block
+		button
+			width: 85px
+			height: 25px
+			line-height: 25px
+			color: #FFF
+			text-align: center
+			background: #3A5268
+			font-size: 13px
+			&:hover
+				background: $blue-h-b
+	&__select-university 
+		display: inline-block
+		width: 650px
+		+clr
+	&__university
+		position: relative
+		width: 650px
+		height: 75px
+		padding: 10px
+		margin-bottom: 10px
+		-webkit-box-shadow: 0 0 20px 0 #d5d5d5 
+		box-shadow: 0 0 20px 0 #d5d5d5 
+		+box
+		h5
+			font-weight: bold 
+			font-size: 13px
+			display: inline-block
+			padding-right: 5px
+		p 
+			font-size: 13px
+			display: inline-block
+		.faculty
+			padding: 0
+.close
+	position: absolute
+	top: 0
+	right: 0
+	cursor: pointer
+	+s(close)
+	&:hover
+		+s(close-h)
+.btn
+	position: relative
+	float: right
+	color: #FFF 
+	text-transform: uppercase
+	background: #3A5268 
+	font-weight: bold 
+	font-size: 17px 
+	+opensans
+	&:hover
+		background: $blue-h-b
+	&-add
+		width: 250px
+		height: 40px
+		line-height: 40px
+		padding: 0 15px	
+		text-align: left
+		margin: 60px 0 30px 0	
+	span
+		position: absolute
+		top: 11px
+		right: 15px
+		margin-left: 20px
+		+s(btn-add)
+.add-pic
+	width: 190px
+	height: 111px
+	background: #E2E6EB 
+	text-align: center
+	line-height: 105px
+	margin-right: 30px
+	span
+		display: inline-block
+		margin-right: 5px
+		vertical-align: middle
+		+s(add_pic)
+	a
+		color: $blue  
+		&:hover
+			color: $blue-h
+			
+
+
+
+// 
+// admin_create_vopros
+// 
+.create-poll__in
+	font-size: 13px
+	+opensans
+	h4
+		font-weight: bold
+		
+.create-poll
+	&__create-question
+		font-size: 13px
+		padding: 30px 0
+		+opensans
+		p
+			margin-bottom: 15px
+		h3
+			font-weight: bold
+			text-transform: uppercase
+	&__question
+		display: inline-block
+		width: 580px
+		margin-right: 30px
+		input
+			width: 580px
+	&__video
+		display: inline-block
+		width: 310px
+		input
+			width: 310px
+	&__question-type
+		select
+			width: 580px
+	&__answers
+		input
+			display: block
+			width: 100%
+			margin-bottom: 10px 
+	&__btns
+		margin: 40px 0
+		+clr
+		.btn-create
+			position: relative
+			float: left
+			width: 215px
+			height: 40px
+			line-height: 40px
+			text-align: left
+			padding-left: 15px
+			background: $green 
+			span
+				position: absolute
+				top: 8px
+				right: 15px
+				+s(btn-create) 
+			&:hover
+				background: $green-h 
+		.btn-add_more
+			float: right
+			margin-top: 5px
+			width: 195px
+			height: 30px
+			line-height: 30px
+			text-align: left
+			padding-left: 10px
+			text-transform: none
+			font-weight: bold 
+			font-size: 13px
+			+opensans
+			span
+				position: absolute
+				top: 6px
+				right: 10px
+		.btn-prev
+			float: right
+			line-height: 40px
+			margin-right: 30px
+			font-size: 13px
+			+opensans
+			span
+				display: inline-block
+				margin-right: 5px
+				vertical-align: middle
+				+s(prev-step)
+			a
+				color: $blue
+
+
+
+// 
+// admin_roley
+// 
+
+.create-poll
+	&__userlink
+		display: inline-block
+		margin-right: 25px
+		input
+			width: 590px 
+	&__access
+		display: inline-block
+		h4
+			font-weight: normal
+		input
+			width: 300px
+	&__userrights
+		h4
+			margin-bottom: 5px
+		.checkbox
+			display: inline-block
+			vertical-align: middle
+		span
+			display: inline-block
+			margin: 0 25px 0 10px
+.btn-add-small
+	position: absolute
+	bottom: 5px
+	right: 0
+	width: 130px
+	height: 40px
+	line-height: 40px
+	text-align: center
