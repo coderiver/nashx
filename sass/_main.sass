@@ -11,7 +11,8 @@ body
 	-webkit-background-size: cover
 	-o-background-size: cover
 	background-size: cover
-// page-header
+
+
 .page-header
 	height: 180px
 	font-size: 0
@@ -140,7 +141,6 @@ span.savechange
 		+s(save_fac)
 
 
-// main
 .bonuses
 	background: url(../img/bonuses_bg.png) no-repeat
 	-webkit-background-size: cover
@@ -221,7 +221,7 @@ span.savechange
 				display: inline-block
 				+s(arr-right-h)
 
-// page-footer
+
 .page-footer
 	background: $blue 
 	height: 45px
@@ -240,7 +240,7 @@ input, select
 	padding-left: 10px
 	+box
 
-// admin-header
+
 .admin-header
 	font-size: 0
 	height: 75px
@@ -268,7 +268,7 @@ input, select
 			margin-left: 30px
 			+opensans
 
-// main
+
 .admin-menu
 	background: $blue
 	height: 50px
@@ -399,7 +399,7 @@ input, select
 	+opensans
 	&:hover
 		background: $blue-h-b
-	&-add
+	&_add
 		width: 250px
 		height: 40px
 		line-height: 40px
@@ -473,7 +473,7 @@ input, select
 	&__btns
 		margin: 40px 0
 		+clr
-		.btn-create
+		.btn_create
 			position: relative
 			float: left
 			width: 215px
@@ -489,7 +489,7 @@ input, select
 				+s(btn-create) 
 			&:hover
 				background: $green-h 
-		.btn-add_more
+		.btn_add_more
 			float: right
 			margin-top: 5px
 			width: 195px
@@ -505,7 +505,7 @@ input, select
 				position: absolute
 				top: 6px
 				right: 10px
-		.btn-prev
+		.btn_prev
 			float: right
 			line-height: 40px
 			margin-right: 30px
@@ -524,8 +524,11 @@ input, select
 // 
 // admin_roley
 // 
-
 .create-poll
+	&__admin-roles
+		display: inline-block
+		vertical-align: top
+		margin: 40px 0
 	&__userlink
 		display: inline-block
 		margin-right: 25px
@@ -537,16 +540,33 @@ input, select
 			font-weight: normal
 		input
 			width: 300px
-	&__userrights
+	&__checkboxes
 		h4
 			margin-bottom: 5px
 		.checkbox
-			display: inline-block
-			vertical-align: middle
-		span
-			display: inline-block
-			margin: 0 25px 0 10px
-.btn-add-small
+			position: relative
+			input
+				opacity: 0
+				&:checked + i + span
+					color: $green
+				&:checked + i:before
+					content: ""
+					position: absolute
+					top: 1px
+					left: 1px
+					width: 9px
+					height: 9px
+					background: #EF685A 
+				& + i
+					position: absolute
+					top: 3px
+					left: 0
+					width: 11px
+					height: 11px
+					border: 1px solid $blue
+			span
+				margin: 0 25px 0 10px	
+.btn_add-small
 	position: absolute
 	bottom: 5px
 	right: 0
@@ -554,3 +574,61 @@ input, select
 	height: 40px
 	line-height: 40px
 	text-align: center
+.create-poll__item
+	width: 850px
+	border: 1px solid #E2E2E2
+	margin-bottom: 20px
+.item-top
+	position: relative
+	background: #E2E2E2 
+	height: 40px
+	line-height: 40px
+	font-size: 13px
+	+opensans
+	+clr
+.item-name
+	float: left
+	font-weight: bold
+	margin-left: 15px
+	color: $blue 
+.item-email
+	float: right
+	margin-right: 20px
+.item-date
+	float: right
+	margin-right: 50px
+.close_item
+	top: 10px
+	right: 15px
+.item-bottom
+	padding: 15px
+.btn_changes
+	width: 175px
+	height: 30px
+	text-transform: none
+	font-size: 13px
+	bottom: 3px
+	&.not-active
+		background: #E2E2E2
+		cursor: auto
+.checkbox-border
+	margin-top: 10px
+	padding-top: 15px
+	border-top: 1px solid #E2E2E2
+
+.access-checked
+	display: none
+	span
+		margin: 0 10px 0 5px 
+		line-height: 17px	
+// .access-poll
+// 	display: none
+// 	width: 365px
+// 	height: 30px
+// 	background: #F4F4F4 
+// .checkbox_access input:checked ~ span
+// 	display: none
+// .checkbox_access input:checked + .access-checked
+// 	color: $green 
+// .checkbox_access input:checked + .access-checked .access-poll
+// 	display: inline-block
