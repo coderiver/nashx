@@ -33,55 +33,91 @@ head.ready(function() {
 		return false;
 	});
 
-	$('#js-checkbox_access').is(':checked', function(){
-		$('.span-access').css('display', 'none');
-		$('.access-checked').css('display', 'inline-block');
-		$('.access-checked').css('color', '#0db597');
-		return false
+	$('.popup-close').click(function(event) {
+		$('.overlay').hide();
+		$('.popup').removeClass('is-visible');
+		return false;
 	});
 
-	$('#js-selected-university').click(function(event) {
+	// $('.js-checkbox_access').is(':checked', function(){
+	// 	$('.span-access').css('display', 'none');
+	// 	$('.access-checked').css('display', 'inline-block');
+	// 	$('.access-checked').css('color', '#0db597');
+	// 	return false
+	// });
+
+	$('.js-checkbox_access').on('change', function() {
+		$(this).parents('.poll-access').toggleClass('is-checked');
+	});
+
+	$('.js-selected-university').click(function(event) {
 		$('create-poll__university').css('display', 'block');
 		return false;
 	});
 
-	function checkParams(){
-	    var sel1 = $('#select1').val();
-		var sel2 = $('#select2').val();
-		var sel3 = $('#select3').val();
-		var sel4 = $('#select4').val();
-		var sel5 = $('#select5').val();
-	    
-	    if(sel1.value && sel2.value && sel3.value && sel4.value && sel5.value){
-	        $('#button').removeAttr('disabled');
-	    } 
-	    else {
-	        $('#button').attr('disabled', 'disabled');
-	    }
-	};
+	
+	(function() {
+
+	    $('.js-form').each(function() {
+	        var form    = $(this),
+	            btn     = form.find('.js-button'),
+	            // input  = form.find('input:not([type="checkbox"], [type="radio"]), textarea'),
+	            select  = form.find('.js-select'),
+	            selects = [],
+	            status  = []; // [false, false, false, true, ...]
+
+	        
+	        // check if input has value
+	        var checkStatus = function(input) {
+            	console.log(input.val());
+	            if (input.val() != "0") {
+	                return true;
+	            } else {
+	                return false;
+	                console.log(select.val());
+	            }
+	        };
+
+	        // toggle button
+	        var toggleSubmitBtn = function() {
+	            if (status.indexOf(false) !== -1 ) {
+	                if ( !btn.is(':disabled') ) {
+	                    btn.attr('disabled', 'disabled');
+	                }
+	            } else {
+	                if ( btn.is(':disabled') ) {
+	                    btn.removeAttr('disabled');
+	                }
+	            }
+	        };
+
+	        // add each input to array and create status array
+	        select.each(function() {
+	            selects.push($(this));
+	            status.push(checkStatus($(this)));
+	        });
+
+	        toggleSubmitBtn();
+
+	        console.log(selects);
+	        console.log(status);
 
 
-	// function enableButton(){
- // 		document.getElementById("button").disabled = !(document.getElementById("select1").value && document.getElementById("select2").value && document.getElementById("select3").value && document.getElementById("select4").value && document.getElementById("select4").value);
-	// };
+	        // check if
+	        $(selects).each(function() {
+	            var currentElement = this;
+	            $(currentElement).on('change', function() {
+	                var check = checkStatus($(currentElement));
+	                var index = selects.indexOf(currentElement);
+	                status[index] = check;
+	                toggleSubmitBtn();
+	                
+	                console.log(selects);
+	        		console.log(status);
+	            });
+	        });
+	    });
 
-	// $('.form-group > input').on('input', function () {
-
- //        var empty = false;
- //        $('form > input, form > select').each(function () {
- //            if ($(this).val() == '') {
- //                empty = true;
- //            }
- //        });
-
- //        if (empty) {
- //            $('#signin').attr('disabled', 'disabled');
- //        } else {
- //            $('#signin').removeAttr('disabled');
- //        }
- //    });
-
-	console.log($('body').html());
+	}) ();
 
 });
-

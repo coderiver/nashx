@@ -134,35 +134,35 @@
 	<i></i>
 	<div class="popup">
 		<h3 class="h3">Добавление ВУЗа</h3>
-		<div class="popup__form">
-			<select onchange="document.getElementById('button').disabled = !this.checked" id="select1">
-				<option>Страна</option>
-				<option>Россия</option>
-				<option>Украина</option>
+		<div class="popup__form js-form">
+			<select class="js-select" id="select1">
+				<option value="0">Страна</option>
+				<option value="2">Россия</option>
+				<option value="3">Украина</option>
 			</select>
-			<select onchange="document.getElementById('button').disabled = !this.checked" id="select2">
-				<option>Город</option>
-				<option>Москва</option>
-				<option>Киев</option>
+			<select class="js-select" id="select2">
+				<option value="0">Город</option>
+				<option value="2">Москва</option>
+				<option value="3">Киев</option>
 			</select>
-			<select onchange="document.getElementById('button').disabled = !this.checked" id="select3">
-				<option>ВУЗ</option>
-				<option>Московский государственный институт международных отношений</option>
-				<option>Национальный технический университет Украины "Киевский политехнический институт"</option>
+			<select class="js-select" id="select3">
+				<option value="0">ВУЗ</option>
+				<option value="2">Московский государственный институт международных отношений</option>
+				<option value="3">Национальный технический университет Украины "Киевский политехнический институт"</option>
 			</select>
-			<select onchange="document.getElementById('button').disabled = !this.checked" id="select4">
+			<select id="select4">
 				<option>Факультет</option>
 				<option>Международных отношений</option>
 				<option>Информатики и вычислительной техники</option>
 			</select>
-			<select onchange="document.getElementById('button').disabled = !this.checked" id="select5">
+			<select id="select5">
 				<option>Кафедра</option>
 				<option>Дипломатии</option>
 				<option>Технической кибернетики</option>
 			</select>
-			<input type="button" id="button" value="Сохранить" disabled>
+			<button class="js-button" type="submit" id="button">Сохранить</button>
 		</div>
-		<span class="close"></span>
+		<span class="close popup-close"></span>
 	</div>
 </div>
 <!-- END popup -->

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Template</title>
+	<title>admin_all_opros_statistic-openes</title>
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <meta name="viewport" content="width=1200"> -->
@@ -24,30 +24,61 @@
 		</div>
 	</header>
 	<!-- END header -->
-	<!-- BEGIN -->
+	<!-- BEGIN main -->
 	<div class="main">
 		<ul class="admin-menu">
 			<li><a href="#">создать опрос</a></li>
-			<li class="is-active"><a href="#">Настройки ролей</a></li>
-			<li><a href="#">Все опросы</a></li>
+			<li><a href="#">Настройки ролей</a></li>
+			<li class="is-active"><a href="#">Все опросы</a></li>
 			<a class="advertising" href="#">рекламный кабинет</a>
 		</ul>
 		<div class="create-poll">
-			<div class="create-poll__top">
-				<div class="l-center">
-					<div class="">
-						
+			<div class="create-poll__title">
+				<h3>Теория и методика преподавания педагогики и психологии в ВУЗе</h3>
+				<div class="export">
+					<p>Экспорт:</p>
+					<a href="#">xls</a>
+					<a href="#">csv</a>
+					<a href="#">pdf</a>
+				</div>
+			</div>
+			<div class="create-poll__main">
+				<div class="statistic">
+					<ul class="statistic__menu">
+						<li class="is-active"><a href="#">Cводная статистика</a></li>
+						<li><a href="#">Ответы респондентов</a></li>
+					</ul>
+					<div class="statistic__wrapper">
+						<div class="statistic__title">
+							<h5>Устраивает ли вас уровень преподавания английского языка в вашем ВУЗе?</h5>
+						</div>
+						<div class="statistic__main">
+							<div class="statistic__summary">
+								<div class="statistic__top">
+									<div class="statistic__info">
+										<p>Отвечено: 345</p>
+										<p>Пропущено: 14</p>
+									</div>
+								</div>
+							</div>
+							<div class="arrows arrows_statistic">
+								<span class="up not-active"></span>
+								<span class="down"></span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="create-poll__bottom">
-				<div class="l-center">
-					
+			<div class="create-poll__bottom-btns">
+				<div class="btn_prev btn_prev-statistic">
+					<span></span>
+					<a href="#">Вернуться назад</a>
 				</div>
+				<button class="btn btn_add btn_statistic">Следующий вопрос<span></span></button>
 			</div>
 		</div>
 	</div>
-	<!-- END -->
+	<!-- END main -->
 	<!-- BEGIN footer -->
 	<footer class="page-footer">
 		<div class="l-center">

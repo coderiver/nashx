@@ -1,7 +1,7 @@
 // Normally mainpage styles
 body
 	width: 1000px
-	color: $grey
+	color: $d-grey
 
 // 
 // index
@@ -155,7 +155,7 @@ body
 	overflow: hidden
 	+box 
 	+placeholder
-		color: $grey 
+		color: $d-grey 
 		text-transform: uppercase
 	&_name
 		width: 360px
@@ -192,8 +192,8 @@ span.savechange
 	background: url(../img/polls_bg.png) no-repeat 
 	margin-top: -30px
 	padding: 60px 0 35px
-	-webkit-box-shadow: 0 10px 20px -10px $grey 
-	box-shadow: 0 10px 20px -10px $grey
+	-webkit-box-shadow: 0 10px 20px -10px $d-grey 
+	box-shadow: 0 10px 20px -10px $d-grey
 	h3
 		font-weight: bold 
 		font-size: 17px
@@ -319,9 +319,9 @@ span.savechange
 			color: #FFF 
 			font-size: 13px
 			+opensans
-			// &:disabled
-			// 	background: #e2e2e2 
-			// 	cursor: default
+			&:disabled
+				background: $grey 
+				cursor: default
 
 
 // 
@@ -601,11 +601,11 @@ input.file-image
 			&:hover
 				background: $green-h 
 			&-not-active
-				background: #E2E2E2 
+				background: $grey 
 				&:hover
-					background: #E2E2E2
+					background: $grey
 					cursor: default
-		.btn_add_more
+		.btn_add
 			float: right
 			margin-top: 5px
 			height: 30px
@@ -641,7 +641,7 @@ input.file-image
 	a
 		color: #DC220F 
 		text-decoration: underline
-		margin-right: 25px
+		padding-right: 25px
 .radio
 	position: relative
 	display: block
@@ -649,7 +649,7 @@ input.file-image
 		opacity: 0
 		height: 15px
 		&:checked + i + span
-			color: $grey
+			color: $d-grey
 		&:checked + i:before
 			content: ""
 			position: absolute
@@ -730,12 +730,12 @@ input.file-image
 	text-align: center
 .create-poll__item
 	width: 850px
-	border: 1px solid #E2E2E2
+	border: 1px solid $grey
 	margin-bottom: 20px
 	+box
 .item-top
 	position: relative
-	background: #E2E2E2 
+	background: $grey 
 	height: 40px
 	line-height: 40px
 	font-size: 13px
@@ -766,50 +766,68 @@ input.file-image
 	font-size: 13px
 	bottom: 3px
 	&.not-active
-		background: #E2E2E2
+		background: $grey
 		cursor: auto
 .checkbox-border
 	margin-top: 10px
 	padding: 15px 0 5px 0
-	border-top: 1px solid #E2E2E2
-
+	border-top: 1px solid $grey
 .access-checked
 	display: none
 	span
 		margin: 0 10px 0 5px 
 		line-height: 17px	
-.access-poll
+input.access-poll
 	display: inline-block
 	width: 365px
 	height: 30px
+	margin: -7px 0
 	background: #F4F4F4 
-	
 .arrows
 	display: inline-block
 	margin-top: 40px
 	width: 68px
 	height: 460px
-	line-height: 460px
-	text-align: center
+	span.up
+		display: block
+		margin: 0 auto 
+		cursor: pointer
+		+s(arr-up)
+		&:hover
+			+s(arr-up-h)
+		&.not-active
+			+s(arr-up-not-active)
+			&:hover
+				+s(arr-up-not-active)
+				cursor: default
 	span.down
-		display: inline-block
-		vertical-align: bottom
+		display: block
+		margin: 440px auto 0
 		cursor: pointer
 		+s(arr-down)
 		&:hover
 			+s(arr-down-h)
-// .access-checked + .is-checked	
-// 	display: inline-block
-// 	span
-// 		color: $green 
-
-// .checkbox_access input:checked ~ span
-// 	display: none
-// .checkbox_access input:checked + .access-checked
-// 	color: $green 
-// .checkbox_access input:checked + .access-checked .access-poll
-// 		display: inline-block
-
+		&.not-active
+			+s(arr-down-not-active)
+			&:hover
+				+s(arr-down-not-active)
+				cursor: default
+	&_opros
+		margin-top: 62px
+		height: 614px
+		span.down
+			margin: 568px auto 0
+.poll-access
+	width: 500px
+	display: inline-block
+	vertical-align: top
+.poll-access.is-checked .span-access
+	display: none
+.poll-access.is-checked .access-checked
+	display: inline-block
+	span
+		color: $green 
+		
 
 // 
 // admin_all_opros
@@ -864,7 +882,7 @@ input.file-image
 		+s(itemname_edit-h)
 .allpoll-tools
 	margin: -20px 0 20px 0
-	color: $grey 
+	color: $d-grey 
 	font-size: 13px
 	+opensans
 	+clr
@@ -901,7 +919,7 @@ input.file-image
 	display: inline-block
 	vertical-align: top
 	padding-right: 15px
-	color: $grey 
+	color: $d-grey 
 	font-size: 13px
 	+opensans
 	+box
@@ -913,7 +931,7 @@ input.file-image
 			span
 				margin: 0 0 0 10px 
 	&_info
-		width: 260px
+		width: 255px
 		a
 			display: block
 			margin-bottom: 10px
@@ -931,6 +949,136 @@ input.file-image
 				
 
 // 
+// admin_all_opros_statistic
+// 
+.create-poll__title
+	padding: 30px
+	border-bottom: 1px solid $blue
+	text-transform: uppercase
+	font-weight: bold
+	font-size: 13px
+	+opensans
+	+clr
+	h3
+		float: left
+.create-poll__main
+	border-bottom: 1px solid $blue
+.statistic
+	&__menu
+		background: $grey
+		height: 40px 
+		font-size: 13px
+		+opensans
+		+clr
+		li
+			float: left
+			&:hover
+				a
+					color: $blue-h 
+			a
+				display: block	
+				line-height: 40px
+				color: $blue
+				padding: 0 20px 
+			&.is-active
+				background: #FFF
+				border-bottom: none
+				height: 40px
+				a
+					color: $d-grey
+					text-decoration: none
+	&__wrapper
+		padding: 25px
+	&__title
+		padding-bottom: 20px
+		border-bottom: 1px solid $grey
+		h5
+			font-weight: bold
+			font-size: 13px
+			color: $d-grey
+			+opensans 
+	&__summary
+		width: 874px
+		display: inline-block
+		vertical-align: top
+	&__top
+		height: 48px
+		line-height: 48px
+		+clr
+		p
+			display: inline-block
+			vertical-align: top
+	&__info
+		float: left
+		p
+			margin-right: 20px
+	&__barchart
+		.percents
+			display: inline-block
+			vertical-align: top
+			margin: -5px 7px 0 0
+			li
+				height: 40px
+				text-align: right
+		.chart
+			display: inline-block		
+			.barchart
+				display: table
+				table-layout: fixed 
+				width: 830px
+				height: 200px
+				background-image: url('../img/bg_barchart.png')	
+				li
+					position: relative
+					display: table-cell
+					vertical-align: bottom
+					height: 200px
+					span
+						width: 100px
+						margin: 0 25px
+						display: block
+						background: $green
+						&:before
+							position: absolute
+							left: 0
+							right: 0
+							top: 100%
+							padding: 20px 0 0 25px
+							display: block
+							content: attr(title)
+							word-wrap: break-word	
+.export
+	float: right
+	text-transform: none
+	font-weight: normal
+	p
+		display: inline-block
+	a
+		display: inline-block
+		vertical-align: top
+		margin-left: 5px
+		color: $blue
+		&:hover
+			color: $blue-h 
+.arrows_statistic
+	text-align: right
+	width: 70px
+	margin-top: 25px
+	span.down
+		margin-top: 375px
+.create-poll__bottom-btns
+	height: 72px 
+	line-height: 72px
+	padding: 0 40px
+	background: $grey  
+	.btn_prev-statistic
+		float: left
+	.btn_statistic
+		text-transform: none
+		margin: 16px 0
+
+
+// 
 // bonus
 // 
 .bonus-title
@@ -944,6 +1092,9 @@ input.file-image
 		+opensans
 .bonuses
 	padding-top: 30px
+	&__in
+		display: inline-block
+		vertical-align: top
 .bonus
 	-webkit-box-shadow: 0 0 20px 0 #999 
 	box-shadow: 0 0 20px 0 #999
@@ -984,13 +1135,13 @@ input.file-image
 		padding: 0 20px
 		height: 40px
 		line-height: 40px
-		background: #E2E2E2
+		background: $grey
 		+clr
 		h6
 			float: left
 			font-size: 13px
 			font-weight: normal
-			color: $grey 
+			color: $d-grey 
 		p
 			float: right
 			color: #666 
@@ -1002,7 +1153,7 @@ input.file-image
 		p
 			display: block
 			padding-bottom: 5px
-			color: $grey
+			color: $d-grey
 			span
 				font-weight: bold
 			span.is-valid
@@ -1045,6 +1196,10 @@ input.file-image
 				text-align: center
 				vertical-align: middle
 				+s(not-used)
+.arrows_bonus
+	margin-top: 0
+	span.down
+		margin-top: 465px
 
 
 
@@ -1067,6 +1222,8 @@ input.file-image
 	width: 998px
 	margin-left: 1px
 	background: #FFF 
+	-webkit-box-shadow: 0 10px 20px -10px $d-grey 
+	box-shadow: 0 10px 20px -10px $d-grey
 	&__top
 		height: 42px
 		color: #FFF
@@ -1117,39 +1274,124 @@ input.file-image
 		padding: 0
 .poll-question__video
 	display: inline-block
-	width: 100px
+	width: 120px
 	height: 15px
 	line-height: 15px
-	margin-right: 30px
 	span
-		display: inline-block
-		margin-right: 5px
-		vertical-align: middle
-		+s(add_video)
+		position: absolute
+		+s(show_video)
 	button
 		color: #FFF 
 		text-decoration: underline 
+		display: inline-block
+		padding-left: 25px
 		background: none 
 		z-index: 1
 		&:hover
 			color: #89FAE6
-input.file-video
-	position: absolute
-	top: 45px
-	right: 45px
-	width: 100px
-	height: 15px
-	padding-left: 60px
-	cursor: pointer
-	z-index: 2
-	opacity: 0
 .btn_next
 	float: left
 	margin: 40px 0 100px 42px 
-	
+
 
 // 
 // opros_uspeh
 // 
 .poll-end
+	width: 918px
+	margin-left: 1px
 	padding: 25px 40px
+	color: #333
+	background: #FFF 
+	-webkit-box-shadow: 0 10px 20px -10px $d-grey 
+	box-shadow: 0 10px 20px -10px $d-grey
+	+opensans
+	&__wrapper
+		border-bottom: 1px solid #dbdbdb
+		h5
+			display: block
+			font-size: 13px
+			font-weight: bold
+	&__inner
+		font-size: 0
+		margin-bottom: 30px
+		p
+			font-size: 13px
+		a
+			color: $blue 
+		span
+			font-weight: bold
+			font-size: 13px
+	&__icon
+		display: inline-block
+		vertical-align: top
+		margin-right: 15px
+		span
+			display: inline-block
+			+s(poll_end)
+	&__title
+		display: inline-block
+		vertical-align: middle
+		h1 
+			margin-bottom: 5px
+			font-size: 17px
+			font-weight: bold
+			text-transform: uppercase
+		p
+			font-size: 13px
+	&__coverage
+		width: 920px
+		background: #E9EAED 
+		margin: 15px 0 30px 0
+	&__scope
+		background: $green
+		height: 40px 
+	&__wrap
+		background: $red
+		width: 105px
+		height: 80px
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		color: #FFF 
+		margin-right: 20px
+		p
+			margin: 15px 0
+		span
+			font-size: 14px
+	&__in
+		display: inline-block
+		padding-top: 10px
+	button
+		margin: 30px 10px 0 0
+		padding: 10px
+		background: $blue
+		color: #FFF
+		font-weight: bold
+		font-size: 13px
+		+opensans  
+.btn_main
+	float: none
+	height: 40px
+	line-height: 40px
+	padding: 0 15px 0 40px	
+	text-align: left
+	margin: 40px
+	margin-bottom: 200px
+	span
+		position: absolute
+		top: 11px
+		left: 15px
+		margin: 0
+		+s(btn-main)
+
+
+
+// 
+// opros_uspeh-dilemma
+// 
+.poll-end__dillema
+	padding: 0
+	label
+		p
+			display: inline-block
