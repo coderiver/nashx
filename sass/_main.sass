@@ -17,7 +17,7 @@ body
 	height: 180px
 	font-size: 0
 	&__logo
-		width: 213px
+		width: 199px
 		display: inline-block
 		margin: 1px 0 0 1px
 		text-align: center
@@ -32,15 +32,22 @@ body
 	+opensans
 	&__userpic
 		display: inline-block
+		text-align: center
+		width: 200px
+		height: 179px
+		overflow: hidden
+		img
+			width: 100%
+			overflow: hidden 
 	&__info
 		display: inline-block
 		vertical-align: top
-		width: 640px
+		width: 600px
 	&__top
 		background: $green
 		height: 74px 
 		text-transform: uppercase
-		padding: 20px 40px 0 30px 
+		padding: 15px 15px 0 15px 
 		+box
 		+clr
 	&__name
@@ -50,18 +57,6 @@ body
 			margin-bottom: 5px 
 			font-weight: bold 
 			font-size: 13px
-		span
-			display: inline-block
-			vertical-align: top
-			padding-right: 5px
-			+s(change_name)
-		a
-			color: #004e40
-			text-decoration: underline
-			text-transform: none 
-			font-size: 11px
-			&:hover
-				color: #002B23 
 	&__bonuses
 		float: right
 		margin-top: 5px
@@ -78,10 +73,10 @@ body
 				color: #89FAE6 
 	&__bottom
 		height: 105px
-		padding: 15px 25px 
+		padding: 15px
 		background: #FFF 
 		+box
-		h4
+		h5
 			font-weight: bold 
 			font-size: 13px
 			display: inline-block
@@ -89,6 +84,36 @@ body
 		p 
 			font-size: 13px
 			display: inline-block
+.change
+	span
+		display: inline-block
+		vertical-align: top
+		padding-right: 5px
+		+s(change)
+	a
+		color: #004e40
+		text-decoration: underline
+		text-transform: none 
+		font-size: 11px
+		display: inline-block
+		padding-top: 1px
+		&:hover
+			color: #002B23 
+	&_university
+		position: absolute
+		top: 0
+		right: 0
+		a
+			color: $blue
+.university
+	position: relative
+	h5
+		vertical-align: top
+	p
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+		width: 390px
 .faculty
 	padding: 10px 0
 	display: inline-block
@@ -100,7 +125,8 @@ body
 	a
 		color: $blue
 		text-decoration: underline
-		display: inline-block 
+		display: inline-block
+		padding-top: 1px 
 		font-size: 11px
 		+opensans
 		&:hover
@@ -118,12 +144,15 @@ body
 	float: left
 	a	
 		color: #004E40
-.change
+.change-field
 	width: 410px
 	padding: 5px 10px
 	margin: 0 5px 5px 0
 	display: inline-block
 	background: #EDEDED
+	text-overflow: ellipsis
+	white-space: nowrap
+	overflow: hidden
 	+box 
 	+placeholder
 		color: $grey 
@@ -137,11 +166,13 @@ span.savechange
 	padding-right: 5px
 	&_name
 		+s(save_name)
-	&_fac
-		+s(save_fac)
+	&_field
+		+s(save_field)
 
 
-.bonuses
+.main
+	+clr
+.main__bonuses
 	background: url(../img/bonuses_bg.png) no-repeat
 	-webkit-background-size: cover
 	-o-background-size: cover
@@ -157,7 +188,7 @@ span.savechange
 	p
 		font-size: 13px
 
-.polls-title
+.main__polls-title
 	background: url(../img/polls_bg.png) no-repeat 
 	margin-top: -30px
 	padding: 60px 0 35px
@@ -230,6 +261,68 @@ span.savechange
 	p
 		line-height: 45px
 		
+// 
+// index-popup
+// 
+.overlay
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	padding: 75px 0 0 398px 
+	z-index: 999
+	i
+		position: fixed
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		background: rgba(#131805, 0.3)
+	&:before
+		content: ""
+		display: inline-block
+		width: 0
+.popup
+	position: relative
+	width: 570px 
+	padding: 30px
+	+box
+	background: #fff 
+	display: none
+	box-shadow: 0 0 19px 2px #000 
+	&.is-visible
+		display: inline-block
+	h3
+		margin-bottom: 15px
+		color: #333 
+		font-size: 13px
+		font-weight: bold
+		+opensans
+	&__form
+		select
+			width: 100% 		  		 		 
+			height: 25px
+			margin-bottom: 10px
+			+box
+			padding: 0 10px
+			font-size: 13px
+			color: #333
+			+opensans
+			border: 1px solid #d5d5d5
+		#button
+			width: 90px
+			height: 30px
+			padding: 0
+			text-align: center
+			background: #3A5268	
+			color: #FFF 
+			font-size: 13px
+			+opensans
+			// &:disabled
+			// 	background: #e2e2e2 
+			// 	cursor: default
+
 
 // 
 // admin_create
@@ -311,18 +404,20 @@ input, select
 	font-size: 13px
 	+opensans
 	&__top
+		position: relative
 		border-bottom: 1px solid $blue
+		padding-bottom: 15px
 	&__bottom
 		font-size: 0
 	&__wrap
 		position: relative
 		display: inline-block
 		vertical-align: top
-		margin: 10px 0 25px 
+		margin: 10px 0 15px 
 	&__in
 		h4
 			display: block
-			margin: 20px 0
+			margin: 15px 0
 			font-weight: bold
 		input, select
 			height: 25px
@@ -343,6 +438,7 @@ input, select
 		margin-right: 30px
 		display: inline-block
 		vertical-align: top
+		height: 450px
 		select
 			width: 195px
 			margin-bottom: 10px
@@ -362,6 +458,7 @@ input, select
 		width: 650px
 		+clr
 	&__university
+		display: none
 		position: relative
 		width: 650px
 		height: 75px
@@ -400,10 +497,9 @@ input, select
 	&:hover
 		background: $blue-h-b
 	&_add
-		width: 250px
 		height: 40px
 		line-height: 40px
-		padding: 0 15px	
+		padding: 0 50px 0 15px	
 		text-align: left
 		margin: 60px 0 30px 0	
 	span
@@ -413,6 +509,7 @@ input, select
 		margin-left: 20px
 		+s(btn-add)
 .add-pic
+	position: relative
 	width: 190px
 	height: 111px
 	background: #E2E6EB 
@@ -424,12 +521,23 @@ input, select
 		margin-right: 5px
 		vertical-align: middle
 		+s(add_pic)
-	a
-		color: $blue  
+	button
+		color: $blue 
+		text-decoration: underline 
+		background: none 
+		z-index: 1
 		&:hover
 			color: $blue-h
-			
-
+input.file-image
+	position: absolute
+	top: 45px
+	right: 45px
+	width: 60px
+	height: 15px
+	padding-left: 60px
+	cursor: pointer
+	z-index: 2
+	opacity: 0
 
 
 // 
@@ -444,7 +552,7 @@ input, select
 .create-poll
 	&__create-question
 		font-size: 13px
-		padding: 30px 0
+		padding: 30px 0 15px
 		+opensans
 		p
 			margin-bottom: 15px
@@ -453,18 +561,22 @@ input, select
 			text-transform: uppercase
 	&__question
 		display: inline-block
+		vertical-align: top
 		width: 580px
 		margin-right: 30px
 		input
+			width: 580px
+		select
 			width: 580px
 	&__video
 		display: inline-block
 		width: 310px
 		input
 			width: 310px
-	&__question-type
-		select
-			width: 580px
+	&__show-answers
+		display: inline-block
+		h4
+			margin-bottom: 10px
 	&__answers
 		input
 			display: block
@@ -476,11 +588,10 @@ input, select
 		.btn_create
 			position: relative
 			float: left
-			width: 215px
 			height: 40px
 			line-height: 40px
 			text-align: left
-			padding-left: 15px
+			padding: 0 55px 0 15px
 			background: $green 
 			span
 				position: absolute
@@ -489,14 +600,18 @@ input, select
 				+s(btn-create) 
 			&:hover
 				background: $green-h 
+			&-not-active
+				background: #E2E2E2 
+				&:hover
+					background: #E2E2E2
+					cursor: default
 		.btn_add_more
 			float: right
 			margin-top: 5px
-			width: 195px
 			height: 30px
 			line-height: 30px
 			text-align: left
-			padding-left: 10px
+			padding: 0 35px 0 10px
 			text-transform: none
 			font-weight: bold 
 			font-size: 13px
@@ -518,8 +633,46 @@ input, select
 				+s(prev-step)
 			a
 				color: $blue
-
-
+.delete
+	position: absolute
+	top: 25px
+	right: 40px
+	line-height: 15px
+	a
+		color: #DC220F 
+		text-decoration: underline
+		margin-right: 25px
+.radio
+	position: relative
+	display: block
+	input
+		opacity: 0
+		height: 15px
+		&:checked + i + span
+			color: $grey
+		&:checked + i:before
+			content: ""
+			position: absolute
+			top: 1px
+			left: 1px
+			width: 9px
+			height: 9px
+			background: #EF685A
+			-webkit-border-radius: 50% 
+			border-radius: 50% 
+		& + i
+			position: absolute
+			top: 3px
+			left: 0
+			width: 11px
+			height: 11px
+			border: 1px solid $blue
+			-webkit-border-radius: 50% 
+			border-radius: 50% 
+	span
+		vertical-align: top
+		padding-left: 10px
+		color: #666
 
 // 
 // admin_roley
@@ -543,29 +696,30 @@ input, select
 	&__checkboxes
 		h4
 			margin-bottom: 5px
-		.checkbox
-			position: relative
-			input
-				opacity: 0
-				&:checked + i + span
-					color: $green
-				&:checked + i:before
-					content: ""
-					position: absolute
-					top: 1px
-					left: 1px
-					width: 9px
-					height: 9px
-					background: #EF685A 
-				& + i
-					position: absolute
-					top: 3px
-					left: 0
-					width: 11px
-					height: 11px
-					border: 1px solid $blue
-			span
-				margin: 0 25px 0 10px	
+.checkbox
+	position: relative
+	input
+		opacity: 0
+		height: 15px
+		&:checked + i + span
+			color: $green
+		&:checked + i:before
+			content: ""
+			position: absolute
+			top: 1px
+			left: 1px
+			width: 9px
+			height: 9px
+			background: #EF685A 
+		& + i
+			position: absolute
+			top: 3px
+			left: 0
+			width: 11px
+			height: 11px
+			border: 1px solid $blue
+	span
+		margin: 0 25px 0 10px	
 .btn_add-small
 	position: absolute
 	bottom: 5px
@@ -578,6 +732,7 @@ input, select
 	width: 850px
 	border: 1px solid #E2E2E2
 	margin-bottom: 20px
+	+box
 .item-top
 	position: relative
 	background: #E2E2E2 
@@ -591,6 +746,8 @@ input, select
 	font-weight: bold
 	margin-left: 15px
 	color: $blue 
+	&:hover
+		color: $blue-h 
 .item-email
 	float: right
 	margin-right: 20px
@@ -613,7 +770,7 @@ input, select
 		cursor: auto
 .checkbox-border
 	margin-top: 10px
-	padding-top: 15px
+	padding: 15px 0 5px 0
 	border-top: 1px solid #E2E2E2
 
 .access-checked
@@ -621,14 +778,378 @@ input, select
 	span
 		margin: 0 10px 0 5px 
 		line-height: 17px	
-// .access-poll
-// 	display: none
-// 	width: 365px
-// 	height: 30px
-// 	background: #F4F4F4 
+.access-poll
+	display: inline-block
+	width: 365px
+	height: 30px
+	background: #F4F4F4 
+	
+.arrows
+	display: inline-block
+	margin-top: 40px
+	width: 68px
+	height: 460px
+	line-height: 460px
+	text-align: center
+	span.down
+		display: inline-block
+		vertical-align: bottom
+		cursor: pointer
+		+s(arr-down)
+		&:hover
+			+s(arr-down-h)
+// .access-checked + .is-checked	
+// 	display: inline-block
+// 	span
+// 		color: $green 
+
 // .checkbox_access input:checked ~ span
 // 	display: none
 // .checkbox_access input:checked + .access-checked
 // 	color: $green 
 // .checkbox_access input:checked + .access-checked .access-poll
-// 	display: inline-block
+// 		display: inline-block
+
+
+// 
+// admin_all_opros
+// 
+.create-poll__inn-top
+	display: inline-block
+	margin-left: 20px
+	h4
+		margin-bottom: 10px
+	input
+		width: 230px
+		+box
+		+placeholder
+			padding-left: 20px
+			line-height: 15px
+			font-style: italic
+			font-size: 13px
+			color: #999
+			+opensans
+			+s(search)
+.search
+	width: 130px
+	+box
+.advertised
+	width: 170px
+	+box
+.btn-apply
+	display: inline-block
+	vertical-align: bottom
+	text-align: center
+	text-decoration: none
+	width: 100px
+	height: 25px
+	line-height: 25px
+	background: $blue 
+	margin: 0 15px 0 20px
+	color: #FFF 
+	font-size: 13px
+	+opensans
+.btn-reset
+	display: inline-block
+	vertical-align: bottom
+	color: $blue
+	line-height: 25px
+.item-name-edit
+	display: inline-block
+	vertical-align: middle
+	margin-left: 10px
+	cursor: pointer
+	+s(itemname_edit)
+	&:hover
+		+s(itemname_edit-h)
+.allpoll-tools
+	margin: -20px 0 20px 0
+	color: $grey 
+	font-size: 13px
+	+opensans
+	+clr
+	.allpoll-select
+		float: left
+		overflow: hidden
+		p
+			display: inline-block
+			padding-right: 10px
+		select
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+			border: none
+			display: inline-block
+			vertical-align: top
+			text-decoration: underline
+			width: 100px
+			padding-left: 8px
+			background: transparent url("../img/arr_select_down.png") no-repeat left center
+	.date-range
+		float: right
+		p
+			display: inline-block
+			padding-right: 10px
+		input
+			display: inline-block
+			width: 90px
+		span
+			padding: 0 5px
+.create-poll__inn-bottom
+	margin-bottom: 10px 
+.allpoll
+	display: inline-block
+	vertical-align: top
+	padding-right: 15px
+	color: $grey 
+	font-size: 13px
+	+opensans
+	+box
+	&_checkbox
+		width: 240px
+		label
+			display: block
+			margin-bottom: 10px
+			span
+				margin: 0 0 0 10px 
+	&_info
+		width: 260px
+		a
+			display: block
+			margin-bottom: 10px
+			color: $blue
+			&:hover
+				color: $blue-h 
+		p
+			display: block
+	&_changes
+		width: 320px
+		p
+			margin-bottom: 10px
+			&:last-child
+				margin: 0
+				
+
+// 
+// bonus
+// 
+.bonus-title
+	padding: 40px
+	background: $blue 
+	h3
+		text-transform: uppercase
+		color: #FFF
+		font-size: 17px
+		font-weight: bold
+		+opensans
+.bonuses
+	padding-top: 30px
+.bonus
+	-webkit-box-shadow: 0 0 20px 0 #999 
+	box-shadow: 0 0 20px 0 #999
+	font-size: 0
+	background: #FFF 
+	height: 105px
+	width: 845px
+	margin-bottom: 30px
+	&__wrap
+		width: 105px
+		height: 105px
+		padding: 10px 15px
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		color: #FFF
+		font-size: 13px
+		+opensans
+		+box 
+		h5
+			padding-bottom: 25px
+			font-weight: normal
+			font-size: 13px
+		p
+			padding-bottom: 5px
+		span
+			padding-bottom: 5px
+			font-weight: bold
+			font-size: 14px
+			text-transform: uppercase
+	&__inner
+		display: inline-block
+		vertical-align: top
+		font-size: 13px
+		+opensans
+		width: 740px
+	&__top
+		padding: 0 20px
+		height: 40px
+		line-height: 40px
+		background: #E2E2E2
+		+clr
+		h6
+			float: left
+			font-size: 13px
+			font-weight: normal
+			color: $grey 
+		p
+			float: right
+			color: #666 
+	&__bottom
+		padding: 10px 20px
+		height: 65px
+		font-size: 13px
+		+opensans
+		p
+			display: block
+			padding-bottom: 5px
+			color: $grey
+			span
+				font-weight: bold
+			span.is-valid
+				color: $green
+			span.is-used
+				color: $blue
+			span.is-not-valid
+				color: #666
+		a
+			color: $blue 
+			display: block
+	&_active
+		.bonus__wrap
+			background: $red
+	&_not-active
+		.bonus__wrap
+			background: #e39a92
+		.bonus__bottom
+			position: relative
+		.bonus-error
+			position: absolute
+			top: 10px
+			right: 20px
+			color: $red 
+	&_used
+		.bonus__wrap
+			background: #51667b
+			h5
+				padding-bottom: 20px
+			span
+				display: inline-block
+				text-align: center
+				vertical-align: middle
+				+s(is-used)
+	&_not-used
+		.bonus__wrap
+			background: #a7a7a7
+			span
+				display: inline-block
+				text-align: center
+				vertical-align: middle
+				+s(not-used)
+
+
+
+// 
+// opros
+// 
+.page-header_poll
+	background: $blue
+	text-transform: uppercase
+	padding-left: 42px
+	width: 958px 
+	height: 75px
+	line-height: 75px 
+	h3
+		color: #FFF
+		font-weight: bold
+		font-size: 13px
+		+opensans 
+.poll-question
+	width: 998px
+	margin-left: 1px
+	background: #FFF 
+	&__top
+		height: 42px
+		color: #FFF
+		font-weight: bold
+		line-height: 42px
+		font-size: 0
+		+opensans 
+	&__number
+		width: 42px
+		display: inline-block
+		text-align: center
+		font-size: 14px
+		background: $red
+	&__title
+		background: $green 
+		display: inline-block
+		padding-left: 20px
+		font-size: 13px
+		width: 936px
+		span
+			text-decoration: underline
+	&__showvideo
+		position: relative
+		p
+			display: inline-block
+			margin-right: 15px
+	&__bottom
+		padding: 15px 42px
+		label
+			margin-bottom: 5px
+		textarea
+			width: 914px
+	&__row
+		width: 956px
+		height: 35px
+		line-height: 35px
+		padding-left: 42px
+		border-bottom: 1px solid #d3d3d3
+		font-size: 13px
+		input
+			display: inline-block
+			width: 45px
+		span
+			display: inline-block
+		&:last-child
+			border: none
+	&__in
+		padding: 0
+.poll-question__video
+	display: inline-block
+	width: 100px
+	height: 15px
+	line-height: 15px
+	margin-right: 30px
+	span
+		display: inline-block
+		margin-right: 5px
+		vertical-align: middle
+		+s(add_video)
+	button
+		color: #FFF 
+		text-decoration: underline 
+		background: none 
+		z-index: 1
+		&:hover
+			color: #89FAE6
+input.file-video
+	position: absolute
+	top: 45px
+	right: 45px
+	width: 100px
+	height: 15px
+	padding-left: 60px
+	cursor: pointer
+	z-index: 2
+	opacity: 0
+.btn_next
+	float: left
+	margin: 40px 0 100px 42px 
+	
+
+// 
+// opros_uspeh
+// 
+.poll-end
+	padding: 25px 40px

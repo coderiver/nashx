@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Template</title>
+	<title>admin_all_opros</title>
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <meta name="viewport" content="width=1200"> -->
@@ -28,21 +28,141 @@
 	<div class="main">
 		<ul class="admin-menu">
 			<li><a href="#">создать опрос</a></li>
-			<li class="is-active"><a href="#">Настройки ролей</a></li>
-			<li><a href="#">Все опросы</a></li>
+			<li><a href="#">Настройки ролей</a></li>
+			<li class="is-active"><a href="#">Все опросы</a></li>
 			<a class="advertising" href="#">рекламный кабинет</a>
 		</ul>
 		<div class="create-poll">
 			<div class="create-poll__top">
-				<div class="l-center">
-					<div class="">
-						
-					</div>
+				<div class="create-poll__in create-poll__inn-top">
+					<h4>Поиск</h4>
+					<input type="text" placeholder="Ключевое слово">
+					<select class="search">
+						<option>Везде</option>
+						<option>Никогда</option>
+						<option>Иногда</option>
+						<option>Всегда</option>
+					</select>
 				</div>
+				<div class="create-poll__in create-poll__inn-top">
+					<h4>Рекламируются</h4>
+					<select class="advertised">
+						<option>Не важно</option>
+						<option>Не важно</option>
+					</select>
+				</div>
+				<div class="create-poll__in create-poll__inn-top">
+					<h4>Статус</h4>
+					<select class="advertised">
+						<option>Только активные</option>
+					</select>
+				</div>
+				<a class="btn-apply" href="#">Применить</a>
+				<a class="btn-reset" href="#">Сбросить</a>
 			</div>
 			<div class="create-poll__bottom">
 				<div class="l-center">
-					
+					<div class="create-poll__admin-roles">
+						<div class="allpoll-tools">
+							<div class="allpoll-select">
+								<p>Сортировка:</p>
+								<select>
+									<option checked>по дате</option>
+									<option>по имени</option>
+								</select>
+							</div>
+							<div class="date-range">
+								<p>Интервал дат:</p>
+								<input class="js-date" type="date">
+								<span>-</span>
+								<input class="js-date" type="date">
+							</div>
+						</div>
+						<div class="create-poll__item create-poll__inn-bottom">
+							<div class="item-top">
+								<a class="item-name" href="#">Теория и методика преподавания педагогики и психологии в ВУЗе</a>
+								<span class="item-name-edit"></span>
+							</div>
+							<div class="item-bottom">
+								<div class="allpoll allpoll_checkbox">
+									<label class="checkbox"><input type="checkbox"><i></i><span>Не активен (не показывается)</span></label>
+									<label class="checkbox"><input type="checkbox" checked><i></i><span>Рекламируется</span></label>
+								</div>
+								<div class="allpoll allpoll_info">
+									<a href="#">Открыть как шаблон</a>
+									<a href="#">Статистика</a>
+									<p>Прошло опрос: 345 человек</p>
+								</div>
+								<div class="allpoll allpoll_changes">
+									<p>Добавлен 23.05.15 в 23:34 (Username)</p>
+									<p>Отредактирован 24.05.15 в 12:45 (Vasya Pupkin)</p>
+									<p>Остановлен 23 августа 2015 в 23:55</p>
+								</div>
+							</div>
+						</div>
+						<div class="create-poll__item create-poll__inn-bottom">
+							<div class="item-top">
+								<a class="item-name" href="#">Теория и методика преподавания педагогики и психологии</a>
+								<span class="item-name-edit"></span>
+							</div>
+							<div class="item-bottom">
+								<div class="allpoll allpoll_checkbox">
+									<label class="checkbox"><input type="checkbox" checked><i></i><span>Активен (показывается)</span></label>
+									<label class="checkbox"><input type="checkbox"><i></i><span>Не рекламируется</span></label>
+								</div>
+								<div class="allpoll allpoll_info">
+									<a href="#">Открыть как шаблон</a>
+									<a href="#">Статистика</a>
+									<p>Прошло опрос: 345 человек</p>
+								</div>
+								<div class="allpoll allpoll_changes">
+									<p>Добавлен 23.05.15 в 23:34 (Username)</p>
+									<p>Отредактирован 24.05.15 в 12:45 (Vasya Pupkin)</p>
+								</div>
+							</div>
+						</div>
+						<div class="create-poll__item create-poll__inn-bottom">
+							<div class="item-top">
+								<a class="item-name" href="#">Теория и методика преподавания педагогики и психологии в ВУЗе</a>
+								<span class="item-name-edit"></span>
+							</div>
+							<div class="item-bottom">
+								<div class="allpoll allpoll_checkbox">
+									<label class="checkbox"><input type="checkbox" checked><i></i><span>Активен (показывается)</span></label>
+									<label class="checkbox"><input type="checkbox" checked><i></i><span>Рекламируется</span></label>
+								</div>
+								<div class="allpoll allpoll_info">
+									<a href="#">Открыть как шаблон</a>
+									<a href="#">Статистика</a>
+									<p>Прошло опрос: 345 человек</p>
+								</div>
+								<div class="allpoll allpoll_changes">
+									<p>Добавлен 23.05.15 в 23:34 (Username)</p>
+								</div>
+							</div>
+						</div>
+						<div class="create-poll__item create-poll__inn-bottom">
+							<div class="item-top">
+								<a class="item-name" href="#">Теория и методика преподавания педагогики</a>
+								<span class="item-name-edit"></span>
+							</div>
+							<div class="item-bottom">
+								<div class="allpoll allpoll_checkbox">
+									<label class="checkbox"><input type="checkbox" checked><i></i><span>Активен (показывается)</span></label>
+									<label class="checkbox"><input type="checkbox"><i></i><span>Не рекламируется</span></label>
+								</div>
+								<div class="allpoll allpoll_info">
+									<a href="#">Открыть как шаблон</a>
+									<a href="#">Статистика</a>
+									<p>Прошло опрос: 345 человек</p>
+								</div>
+								<div class="allpoll allpoll_changes">
+									<p>Добавлен 23.05.15 в 23:34 (Username)</p>
+									<p>Отредактирован 24.05.15 в 12:45 (Vasya Pupkin)</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

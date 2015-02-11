@@ -27,11 +27,13 @@
 				<div class="profile__top">
 					<div class="profile__name">
 						<p>Константин Константинопольский</p>
-						<span></span>
-						<a class="js-change" href="#">Изменить</a>
+						<div class="change">
+							<span></span>
+							<a class="js-change-name" href="#">Изменить</a>
+						</div>
 					</div>
-					<div class="profile__change profile__change-name js-change-name">
-						<input class="change change_name" type="text" placeholder="Константин Константинопольский">
+					<div class="profile__change profile__change-name">
+						<input class="change-field change-field_name" type="text" placeholder="Константин Константинопольский">
 						<span class="savechange savechange_name"></span>
 						<a href="#">Сохранить</a>
 					</div>
@@ -44,6 +46,10 @@
 					<div class="university">
 						<h5>Университет:</h5>
 						<p>Московский государственный институт международных отношений</p>
+						<div class="change change_university">
+							<span></span>
+							<a class="js-change-university" href="#">Изменить</a>
+						</div>
 					</div>
 					<div class="faculty">
 						<h5>Факультет:</h5>
@@ -52,9 +58,9 @@
 							<a class="js-add" href="#">Добавить</a>
 						</div>
 					</div>
-					<div class="profile__change js-add-fac">
-						<input class="change" type="text" placeholder="Экономика и право">
-						<span class="savechange savechange_fac"></span>
+					<div class="profile__change add-fac">
+						<input class="change-field" type="text" placeholder="Экономика и право">
+						<span class="savechange savechange_field"></span>
 						<a href="#">Сохранить</a>
 					</div>
 					<div class="department">
@@ -68,13 +74,13 @@
 	<!-- END header -->
 	<!-- BEGIN -->
 	<div class="main">
-		<section class="bonuses">
+		<section class="main__bonuses">
 			<div class="l-center">
 				<h4>Получайте бонусы за опросы</h4>
 				<p>Политическое манипулирование практически определяет современный коллапс Советского Союза. Очевидно, что политическое учение Монтескье символизирует социализм. Коллапс Советского Союза однозначно отражает феномен толпы.</p>
 			</div>
 		</section>
-		<section class="polls-title">
+		<section class="main__polls-title">
 			<div class="l-center">
 				<h3>вам подходят опросы</h3>
 			</div>
@@ -122,6 +128,45 @@
 	<!-- END footer -->
 </div>
 <!-- END out-->
+
+<!-- BEGIN popup -->
+<div class="overlay" style="display: none;">
+	<i></i>
+	<div class="popup">
+		<h3 class="h3">Добавление ВУЗа</h3>
+		<div class="popup__form">
+			<select onchange="document.getElementById('button').disabled = !this.checked" id="select1">
+				<option>Страна</option>
+				<option>Россия</option>
+				<option>Украина</option>
+			</select>
+			<select onchange="document.getElementById('button').disabled = !this.checked" id="select2">
+				<option>Город</option>
+				<option>Москва</option>
+				<option>Киев</option>
+			</select>
+			<select onchange="document.getElementById('button').disabled = !this.checked" id="select3">
+				<option>ВУЗ</option>
+				<option>Московский государственный институт международных отношений</option>
+				<option>Национальный технический университет Украины "Киевский политехнический институт"</option>
+			</select>
+			<select onchange="document.getElementById('button').disabled = !this.checked" id="select4">
+				<option>Факультет</option>
+				<option>Международных отношений</option>
+				<option>Информатики и вычислительной техники</option>
+			</select>
+			<select onchange="document.getElementById('button').disabled = !this.checked" id="select5">
+				<option>Кафедра</option>
+				<option>Дипломатии</option>
+				<option>Технической кибернетики</option>
+			</select>
+			<input type="button" id="button" value="Сохранить" disabled>
+		</div>
+		<span class="close"></span>
+	</div>
+</div>
+<!-- END popup -->
+
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
