@@ -1046,7 +1046,27 @@ input.access-poll
 							padding: 20px 0 0 25px
 							display: block
 							content: attr(title)
-							word-wrap: break-word	
+							word-wrap: break-word
+	&__bottom
+		+clr
+		table
+			width: 830px
+			float: right
+			margin-top: 75px
+			border-collapse: collapse
+			font-size: 11px
+			+opensans
+			tr
+				border-bottom: 1px solid $grey
+				&:first-child 
+					border-top: 1px solid $grey
+					background: #F1F1F1 
+				.statistic__row-right
+					text-align: right
+			td
+				padding: 10px 20px
+				span
+					font-weight: bold
 .export
 	float: right
 	text-transform: none
@@ -1065,7 +1085,7 @@ input.access-poll
 	width: 70px
 	margin-top: 25px
 	span.down
-		margin-top: 375px
+		margin-top: 432px
 .create-poll__bottom-btns
 	height: 72px 
 	line-height: 72px
@@ -1076,6 +1096,56 @@ input.access-poll
 	.btn_statistic
 		text-transform: none
 		margin: 16px 0
+
+
+// 
+// admin_all_opros_statistic-opens
+// 
+.statistic__search
+	position: relative
+	width: 535px
+	input
+		position: relative
+		width: 535px
+		height: 30px
+		background: #F4F4F4 
+	span
+		position: absolute
+		top: 8px
+		right: 5px
+		+s(search)
+.statistic__answers
+	margin: 20px 0
+	.user-answer
+		border-top: 1px solid $grey
+		padding: 10px 0
+		&:last-child
+			border-bottom: 1px solid $grey
+		p
+			display: block
+			color: $d-grey 
+		a
+			display: block
+			color: $blue 
+.arrows_answers
+	margin-top: 98px
+	height: 360px
+	span.down
+		margin-top: 315px
+
+// 
+// admin_all_opros_statistic-table
+// 
+table.statistic__table
+	width: 870px
+	margin: 0
+	float: none
+.statistic__col1
+	background: #F1F1F1
+	width: 210px
+.statistic__row-center
+	text-align: center
+
 
 
 // 
