@@ -129,7 +129,7 @@ span.savechange_field { background: url('../img/icons-sbef80c4c81.png') 0 -1033p
 .popup__form #button { width: 90px; height: 30px; padding: 0; text-align: center; background: #3a5268; color: white; font-size: 13px; font-family: "Open Sans", sans-serif; }
 .popup__form #button:disabled { background: #e2e2e2; cursor: default; }
 
-input, select { background: #f4f4f4; border: 1px solid #d5d5d5; padding-left: 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+input, select { background: #f4f4f4; border: 1px solid #d5d5d5; padding-left: 10px; -webkit-border-radius: none; border-radius: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .admin-header { font-size: 0; height: 75px; background: white; border: 1px solid #3d566e; border-bottom: none; }
 .admin-header__logo { display: inline-block; vertical-align: top; text-align: center; line-height: 73px; width: 113px; }
@@ -166,7 +166,7 @@ input, select { background: #f4f4f4; border: 1px solid #d5d5d5; padding-left: 10
 .create-poll__tags button:hover { background: #396689; }
 .create-poll__select-university { display: inline-block; width: 650px; *zoom: 1; }
 .create-poll__select-university:after { content: " "; display: table; clear: both; }
-.create-poll__university { display: none; position: relative; width: 650px; height: 75px; padding: 10px; margin-bottom: 10px; -webkit-box-shadow: 0 0 20px 0 #d5d5d5; box-shadow: 0 0 20px 0 #d5d5d5; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.create-poll__university { display: block; position: relative; width: 650px; height: 75px; padding: 10px; margin-bottom: 10px; -webkit-box-shadow: 0 0 20px 0 #d5d5d5; box-shadow: 0 0 20px 0 #d5d5d5; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .create-poll__university h5 { font-weight: bold; font-size: 13px; display: inline-block; padding-right: 5px; }
 .create-poll__university p { font-size: 13px; display: inline-block; }
 .create-poll__university .faculty { padding: 0; }
@@ -209,9 +209,10 @@ input.file-image { position: absolute; top: 45px; right: 45px; width: 60px; heig
 .create-poll__btns .btn_create-not-active:hover { background: #e2e2e2; cursor: default; }
 .create-poll__btns .btn_add { float: right; margin-top: 5px; height: 30px; line-height: 30px; text-align: left; padding: 0 35px 0 10px; text-transform: none; font-weight: bold; font-size: 13px; font-family: "Open Sans", sans-serif; }
 .create-poll__btns .btn_add span { position: absolute; top: 6px; right: 10px; }
-.create-poll__btns .btn_prev { float: right; line-height: 40px; margin-right: 30px; font-size: 13px; font-family: "Open Sans", sans-serif; }
-.create-poll__btns .btn_prev span { display: inline-block; margin-right: 5px; vertical-align: middle; background: url('../img/icons-sbef80c4c81.png') 0 -1007px no-repeat; width: 10px; height: 16px; }
-.create-poll__btns .btn_prev a { color: #3d566e; }
+
+.btn_prev { float: right; line-height: 40px; margin-right: 30px; font-size: 13px; font-family: "Open Sans", sans-serif; }
+.btn_prev span { display: inline-block; margin-right: 5px; vertical-align: middle; background: url('../img/icons-sbef80c4c81.png') 0 -1007px no-repeat; width: 10px; height: 16px; }
+.btn_prev a { color: #3d566e; }
 
 .delete { position: absolute; top: 25px; right: 40px; line-height: 15px; }
 .delete a { color: #dc220f; text-decoration: underline; padding-right: 25px; }
@@ -377,7 +378,7 @@ input.access-poll { display: inline-block; width: 365px; height: 30px; margin: -
 .arrows_statistic span.down { margin-top: 432px; }
 
 .create-poll__bottom-btns { height: 72px; line-height: 72px; padding: 0 40px; background: #e2e2e2; }
-.create-poll__bottom-btns .btn_prev-statistic { float: left; }
+.create-poll__bottom-btns .btn_prev-statistic { float: left; line-height: 72px; }
 .create-poll__bottom-btns .btn_statistic { text-transform: none; margin: 16px 0; }
 
 .statistic__search { position: relative; width: 535px; }
@@ -441,13 +442,12 @@ table.statistic__table { width: 870px; margin: 0; float: none; }
 .poll-question { width: 998px; margin-left: 1px; background: white; -webkit-box-shadow: 0 10px 20px -10px #333333; box-shadow: 0 10px 20px -10px #333333; }
 .poll-question__top { height: 42px; color: white; font-weight: bold; line-height: 42px; font-size: 0; font-family: "Open Sans", sans-serif; }
 .poll-question__number { width: 42px; display: inline-block; text-align: center; font-size: 14px; background: #dc6053; }
-.poll-question__title { background: #0db597; display: inline-block; padding-left: 20px; font-size: 13px; width: 936px; }
-.poll-question__title span { text-decoration: underline; }
+.poll-question__title { background: #0db597; display: inline-block; vertical-align: top; padding-left: 20px; font-size: 13px; width: 936px; }
 .poll-question__showvideo { position: relative; }
 .poll-question__showvideo p { display: inline-block; margin-right: 15px; }
 .poll-question__bottom { padding: 15px 42px; }
 .poll-question__bottom label { margin-bottom: 5px; }
-.poll-question__bottom textarea { width: 914px; }
+.poll-question__bottom textarea { max-width: 100%; }
 .poll-question__row { width: 956px; height: 35px; line-height: 35px; padding-left: 42px; border-bottom: 1px solid lightgray; font-size: 13px; }
 .poll-question__row input { display: inline-block; width: 45px; }
 .poll-question__row span { display: inline-block; }
@@ -480,6 +480,7 @@ table.statistic__table { width: 870px; margin: 0; float: none; }
 .poll-end__wrap span { font-size: 14px; }
 .poll-end__in { display: inline-block; padding-top: 10px; }
 .poll-end button { margin: 30px 10px 0 0; padding: 10px; background: #3d566e; color: white; font-weight: bold; font-size: 13px; font-family: "Open Sans", sans-serif; }
+.poll-end button:hover { background: #396689; }
 
 .btn_main { float: none; height: 40px; line-height: 40px; padding: 0 15px 0 40px; text-align: left; margin: 40px; margin-bottom: 200px; }
 .btn_main span { position: absolute; top: 11px; left: 15px; margin: 0; background: url('../img/icons-sbef80c4c81.png') 0 -635px no-repeat; width: 12px; height: 18px; }

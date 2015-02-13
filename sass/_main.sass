@@ -335,6 +335,8 @@ input, select
 	background: #F4F4F4 
 	border: 1px solid #d5d5d5
 	padding-left: 10px
+	-webkit-border-radius: none 
+	border-radius: none 
 	+box
 
 
@@ -462,7 +464,7 @@ input, select
 		width: 650px
 		+clr
 	&__university
-		display: none
+		display: block
 		position: relative
 		width: 650px
 		height: 75px
@@ -624,19 +626,19 @@ input.file-image
 				position: absolute
 				top: 6px
 				right: 10px
-		.btn_prev
-			float: right
-			line-height: 40px
-			margin-right: 30px
-			font-size: 13px
-			+opensans
-			span
-				display: inline-block
-				margin-right: 5px
-				vertical-align: middle
-				+s(prev-step)
-			a
-				color: $blue
+.btn_prev
+	float: right
+	line-height: 40px
+	margin-right: 30px
+	font-size: 13px
+	+opensans
+	span
+		display: inline-block
+		margin-right: 5px
+		vertical-align: middle
+		+s(prev-step)
+	a
+		color: $blue
 .delete
 	position: absolute
 	top: 25px
@@ -1105,6 +1107,7 @@ input.access-poll
 	background: $grey  
 	.btn_prev-statistic
 		float: left
+		line-height: 72px
 	.btn_statistic
 		text-transform: none
 		margin: 16px 0
@@ -1321,11 +1324,10 @@ table.statistic__table
 	&__title
 		background: $green 
 		display: inline-block
+		vertical-align: top
 		padding-left: 20px
 		font-size: 13px
 		width: 936px
-		span
-			text-decoration: underline
 	&__showvideo
 		position: relative
 		p
@@ -1336,7 +1338,7 @@ table.statistic__table
 		label
 			margin-bottom: 5px
 		textarea
-			width: 914px
+			max-width: 100%
 	&__row
 		width: 956px
 		height: 35px
@@ -1451,6 +1453,8 @@ table.statistic__table
 		font-weight: bold
 		font-size: 13px
 		+opensans  
+		&:hover
+			background: $blue-h-b 
 .btn_main
 	float: none
 	height: 40px
