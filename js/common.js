@@ -39,13 +39,6 @@ head.ready(function() {
 		return false;
 	});
 
-	// $('.js-checkbox_access').is(':checked', function(){
-	// 	$('.span-access').css('display', 'none');
-	// 	$('.access-checked').css('display', 'inline-block');
-	// 	$('.access-checked').css('color', '#0db597');
-	// 	return false
-	// });
-
 	$('.js-checkbox_access').on('change', function() {
 		$(this).parents('.poll-access').toggleClass('is-checked');
 	});
@@ -55,6 +48,7 @@ head.ready(function() {
 		return false;
 	});
 
+    $( ".datepicker" ).datepicker();
 	
 	(function() {
 

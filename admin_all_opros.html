@@ -54,7 +54,7 @@
 				<div class="create-poll__in create-poll__inn-top">
 					<h4>Статус</h4>
 					<select class="advertised">
-						<option readonly>Только активные</option>
+						<option>Только активные</option>
 					</select>
 				</div>
 				<a class="btn-apply" href="#">Применить</a>
@@ -73,9 +73,15 @@
 							</div>
 							<div class="date-range">
 								<p>Интервал дат:</p>
-								<input class="js-date" type="date">
-								<span>-</span>
-								<input class="js-date" type="date">
+								<div class="calendar">
+									<input type="text" class="datepicker">
+									<span></span>
+								</div>
+								<p>-</p>
+								<div class="calendar">
+									<input type="text" class="datepicker">
+									<span></span>
+								</div>
 							</div>
 						</div>
 						<div class="create-poll__item create-poll__inn-bottom">

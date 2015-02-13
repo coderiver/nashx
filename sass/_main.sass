@@ -17,7 +17,7 @@ body
 	height: 180px
 	font-size: 0
 	&__logo
-		width: 199px
+		width: 198px
 		display: inline-block
 		margin: 1px 0 0 1px
 		text-align: center
@@ -201,15 +201,16 @@ span.savechange
 		text-transform: uppercase
 		margin-bottom: 35px
 .polls
+	position: relative
 	margin: -40px 0 95px 0
 	font-size: 0
-	&__items
-		margin-left: -40px
+	&__cycle
+		margin: 0 20px
 	&__item 
 		position: relative
 		display: inline-block
 		vertical-align: top
-		margin-left: 40px
+		margin-left: 45px
 		width: 260px
 		height: 320px
 		background: #FFF 
@@ -237,21 +238,24 @@ span.savechange
 				background: $red-h 
 	&__main
 		margin: 20px
-	&__arr
-		display: inline-block
-		text-align: center
-		height: 320px
-		width: 60px
-		line-height: 320px
-		span
-			display: inline-block
-			cursor: pointer
-			vertical-align: middle
-			+s(arr-right)
-			&:hover
-				display: inline-block
-				+s(arr-right-h)
 
+.cycle-next,.cycle-prev
+	position: absolute
+	top: 50%
+	height: 320px
+	width: 60px
+	z-index: 200 
+	cursor: pointer
+.cycle-prev
+	left: 20px
+	+s(arr-left)
+	&:hover
+		+s(arr-left-h)
+.cycle-next
+	right: 20px
+	+s(arr-right)
+	&:hover
+		+s(arr-right-h)
 
 .page-footer
 	background: $blue 
@@ -907,12 +911,20 @@ input.access-poll
 		float: right
 		p
 			display: inline-block
-			padding-right: 10px
-		input
-			display: inline-block
+			vertical-align: middle
+		.datepicker
 			width: 90px
-		span
-			padding: 0 5px
+			height: 28px
+			z-index: 2
+		.calendar
+			display: inline-block
+			position: relative
+			span
+				position: absolute
+				top: 5px
+				right: 5px
+				z-index: 1
+				+s(calendar)
 .create-poll__inn-bottom
 	margin-bottom: 10px 
 .allpoll
@@ -1105,7 +1117,6 @@ input.access-poll
 	position: relative
 	width: 535px
 	input
-		position: relative
 		width: 535px
 		height: 30px
 		background: #F4F4F4 
