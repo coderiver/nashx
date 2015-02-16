@@ -47,7 +47,7 @@ body
 		background: $green
 		height: 74px 
 		text-transform: uppercase
-		padding: 15px 15px 0 15px 
+		padding: 20px 30px 0 30px 
 		+box
 		+clr
 	&__name
@@ -73,7 +73,7 @@ body
 				color: #89FAE6 
 	&__bottom
 		height: 105px
-		padding: 15px
+		padding: 20px 30px
 		background: #FFF 
 		+box
 		h5
@@ -113,9 +113,9 @@ body
 		text-overflow: ellipsis
 		white-space: nowrap
 		overflow: hidden
-		width: 390px
+		width: 365px
 .faculty
-	padding: 10px 0
+	padding: 5px 0
 	display: inline-block
 	span
 		display: inline-block
@@ -145,9 +145,9 @@ body
 	a	
 		color: #004E40
 .change-field
-	width: 410px
+	width: 380px
 	padding: 5px 10px
-	margin: 0 5px 5px 0
+	margin: 5px 5px 5px 1px
 	display: inline-block
 	background: #EDEDED
 	text-overflow: ellipsis
@@ -159,6 +159,7 @@ body
 		text-transform: uppercase
 	&_name
 		width: 360px
+		margin-top: -5px
 		display: block
 		background: #FFF 
 span.savechange
@@ -188,12 +189,9 @@ span.savechange
 	p
 		font-size: 13px
 
-.main__polls-title
-	background: url(../img/polls_bg.png) no-repeat 
+.main__polls-title 
 	margin-top: -30px
-	padding: 60px 0 35px
-	-webkit-box-shadow: 0 10px 20px -10px $d-grey 
-	box-shadow: 0 10px 20px -10px $d-grey
+	padding-top: 60px
 	h3
 		font-weight: bold 
 		font-size: 17px
@@ -202,7 +200,7 @@ span.savechange
 		margin-bottom: 35px
 .polls
 	position: relative
-	margin: -40px 0 95px 0
+	margin: -40px 0 40px 0
 	font-size: 0
 	&__cycle
 		margin: 0 20px
@@ -210,11 +208,14 @@ span.savechange
 		position: relative
 		display: inline-block
 		vertical-align: top
-		margin-left: 45px
+		margin: 40px 0 40px 45px
 		width: 260px
 		height: 320px
 		background: #FFF 
 		text-transform: uppercase
+		-webkit-box-shadow: 0 0 30px 0 $d-grey 
+		box-shadow: 0 0 30px 0 $d-grey
+		overflow: visible
 		+opensans
 		h2
 			margin-top: 20px
@@ -645,9 +646,14 @@ input.file-image
 	right: 40px
 	line-height: 15px
 	a
-		color: #DC220F 
+		color: #ef685a 
 		text-decoration: underline
 		padding-right: 25px
+	&:hover
+		a
+			color: #DC220F 
+		span.close
+			+s(close-h)
 .radio
 	position: relative
 	display: block
@@ -656,6 +662,7 @@ input.file-image
 		height: 15px
 		&:checked + i + span
 			color: $d-grey
+			font-weight: bold
 		&:checked + i:before
 			content: ""
 			position: absolute
@@ -676,7 +683,6 @@ input.file-image
 			-webkit-border-radius: 50% 
 			border-radius: 50% 
 	span
-		vertical-align: top
 		padding-left: 10px
 		color: #666
 
@@ -693,12 +699,14 @@ input.file-image
 		margin-right: 25px
 		input
 			width: 590px 
+			height: 30px
 	&__access
 		display: inline-block
 		h4
 			font-weight: normal
 		input
 			width: 300px
+			height: 30px
 	&__checkboxes
 		h4
 			margin-bottom: 5px
@@ -709,6 +717,7 @@ input.file-image
 		height: 15px
 		&:checked + i + span
 			color: $green
+			font-weight: bold
 		&:checked + i:before
 			content: ""
 			position: absolute
@@ -757,9 +766,13 @@ input.file-image
 .item-email
 	float: right
 	margin-right: 20px
+	color: $blue 
+	&:hover
+		color: $blue-h 
 .item-date
 	float: right
 	margin-right: 50px
+	color: #666 
 .close_item
 	top: 10px
 	right: 15px
@@ -785,10 +798,10 @@ input.file-image
 		line-height: 17px	
 input.access-poll
 	display: inline-block
-	width: 365px
+	width: 355px
 	height: 30px
 	margin: -7px 0
-	background: #F4F4F4 
+	background: #f4f4f4
 .arrows
 	display: inline-block
 	margin-top: 40px
@@ -833,6 +846,7 @@ input.access-poll
 	display: inline-block
 	span
 		color: $green 
+		font-weight: bold
 		
 
 // 
@@ -1111,8 +1125,13 @@ input.access-poll
 		line-height: 72px
 	.btn_statistic
 		text-transform: none
-		margin: 16px 0
+		margin: 21px 0
 		height: 30px
+		line-height: 30px
+		padding: 0 30px 0 10px 
+		span
+			top: 6px
+			right: 9px
 
 
 // 
@@ -1148,7 +1167,7 @@ input.access-poll
 	margin-top: 98px
 	height: 360px
 	span.down
-		margin-top: 315px
+		margin-top: 276px
 
 // 
 // admin_all_opros_statistic-table
@@ -1351,32 +1370,61 @@ table.statistic__table
 		padding-left: 42px
 		border-bottom: 1px solid #d3d3d3
 		font-size: 13px
-		input
-			display: inline-block
-			width: 45px
 		span
 			display: inline-block
 		&:last-child
 			border: none
 	&__in
 		padding: 0
+		
+.choose
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	height: 20px
+	width: 45px
+	padding-right: 20px
+	background: $blue
+	+box 
+	&__input
+		display: block
+		padding: 0
+		height: 20px
+		width: 25px
+		text-align: center
+		font-size: 13px
+		font-weight: bold
+		color: #333 
+	&__plus,
+	&__minus
+		position: absolute
+		right: 6px
+		width: 0px
+		height: 0px
+		border-style: solid
+		background: none
+	&__plus
+		top: 4px
+		border-width: 0 4px 4px 4px
+		border-color: transparent transparent #fff transparent
+	&__minus
+		bottom: 4px
+		border-width: 4px 4px 0 4px
+		border-color: #fff transparent transparent transparent
 .poll-question__video
 	display: inline-block
-	width: 120px
-	height: 15px
 	line-height: 15px
-	span
-		position: absolute
-		+s(show_video)
-	button
+	a
 		color: #FFF 
-		text-decoration: underline 
-		display: inline-block
 		padding-left: 25px
-		background: none 
-		z-index: 1
+		position: relative
 		&:hover
 			color: #89FAE6
+		span
+			position: absolute
+			left: 0
+			+s(show_video)
+		
 .btn_next
 	float: left
 	margin: 40px 0 100px 42px 

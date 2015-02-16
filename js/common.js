@@ -48,8 +48,55 @@ head.ready(function() {
 		return false;
 	});
 
-    $( ".datepicker" ).datepicker();
-	
+    $(".datepicker").datepicker();
+
+    $(".calendar__icon").click(function(event){
+    	$(this).siblings('.datepicker').trigger('focus');
+    });
+
+    $(document).ready(function() {
+		$(".various").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '70%',
+			height		: '70%',
+			autoSize	: false,
+			closeClick	: false
+		});
+	});
+
+	function choose() {
+        var number = $(".js-choose");
+        number.each(function(){
+            var max_number = +($(this).attr("data-max-number"));
+            var input = $(this).find("input");
+            var plus = $(this).find(".js-plus");
+            var minus = $(this).find(".js-minus");
+            plus.bind("click", function(){
+                var val = +(input.val());
+                if (val >= max_number) {
+                    return false
+                }
+                else {
+                    val += 1;
+                    input.val(val);
+                }
+            });
+            minus.bind("click", function(){
+                var val = +(input.val());
+                if (val > 0) {
+                    val -= 1;
+                    input.val(val);
+                }
+                else {
+                    return false;
+                }
+            });
+        });
+    }
+    choose();
+
 	(function() {
 
 	    $('.js-form').each(function() {
