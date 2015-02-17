@@ -52,11 +52,16 @@
 						</div>
 						<div class="create-poll__in create-poll__bonus">
 							<h4>Вознаграждение</h4>
-							<select name="bonus">
-								<option>Промо-код</option>
-								<option>Бла-бла-бла</option>
-								<option>Бла-бла</option>
-							</select>
+							<div class="select js-select">
+								<span class="select__text js-select-text">Промо-код</span>
+								<input type="hidden" class="js-select-input" value="0">
+								<ul class="select__list js-select-list">
+									<li data-id="0">Промо-код</li>
+									<li data-id="2">Промо-код</li>
+									<li data-id="3">Промо-код</li>
+									<li data-id="4">Промо-код</li>
+								</ul>
+							</div>
 						</div>
 						<div class="create-poll__in create-poll__link">
 							<h4>Ссылка</h4>
@@ -69,31 +74,56 @@
 				<div class="l-center">
 					<div class="create-poll__in create-poll__tags">
 						<h4>Теги</h4>
-						<select>
-							<option selected>Страна</option>
-							<option>Бла-бла-бла</option>
-							<option>бла-бла</option>
-						</select>
-						<select>
-							<option selected>Город</option>
-							<option>Бла-бла-бла</option>
-							<option>бла-бла</option>
-						</select>
-						<select>
-							<option selected>ВУЗ</option>
-							<option>Бла-бла-бла</option>
-							<option>бла-бла</option>
-						</select>
-						<select>
-							<option selected>Факультет</option>
-							<option>Бла-бла-бла</option>
-							<option>бла-бла</option>
-						</select>
-						<select>
-							<option selected>Кафедра</option>
-							<option>Бла-бла-бла</option>
-							<option>бла-бла</option>
-						</select>
+						<div class="select js-select">
+							<span class="select__text js-select-text">Страна</span>
+							<input type="hidden" class="js-select-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">Россия</li>
+								<li data-id="2">Украина</li>
+								<li data-id="3">Россия</li>
+								<li data-id="4">Украина</li>
+							</ul>
+						</div>
+						<div class="select js-select">
+							<span class="select__text js-select-text">Город</span>
+							<input type="hidden" class="js-select-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">Москва</li>
+								<li data-id="2">Киев</li>
+								<li data-id="3">Москва</li>
+								<li data-id="4">Киев</li>
+							</ul>
+						</div>
+						<div class="select js-select">
+							<span class="select__text js-select-text">ВУЗ</span>
+							<input type="hidden" class="js-select-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">МГИМО</li>
+								<li data-id="2">НТУУ "КПИ"</li>
+								<li data-id="3">МГИМО</li>
+								<li data-id="4">НТУУ "КПИ"</li>
+							</ul>
+						</div>
+						<div class="select js-select">
+							<span class="select__text js-select-text">Факультет</span>
+							<input type="hidden" class="js-select-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">Международных отношений</li>
+								<li data-id="2">Информатики и вычислительной техники</li>
+								<li data-id="3">Международных отношений</li>
+								<li data-id="4">Информатики и вычислительной техники</li>
+							</ul>
+						</div>
+						<div class="select js-select">
+							<span class="select__text js-select-text">Кафедра</span>
+							<input type="hidden" class="js-select-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">Дипломатии</li>
+								<li data-id="2">Технической кибернетики</li>
+								<li data-id="3">Дипломатии</li>
+								<li data-id="4">Технической кибернетики</li>
+							</ul>
+						</div>
 						<button class="js-selected-university">Добавить</button>
 					</div>
 					<div class="create-poll__in create-poll__select-university">
@@ -159,6 +189,10 @@
 							<span class="close"></span>
 						</div>
 						<button class="btn btn_add">Добавить вопросы<span></span></button>
+					</div>
+					<div class="arrows arrows_create">
+						<span class="up not-active"></span>
+						<span class="down"></span>
 					</div>
 				</div>
 			</div>

@@ -305,16 +305,18 @@ span.savechange
 		font-weight: bold
 		+opensans
 	&__form
-		select
+		.select
 			width: 100% 		  		 		 
 			height: 25px
 			margin-bottom: 10px
 			+box
-			padding: 0 10px
+			padding: 2px 0 0 10px
 			font-size: 13px
 			color: #333
 			+opensans
 			border: 1px solid #d5d5d5
+			&__list li
+				padding: 2px 10px 
 		#button
 			width: 90px
 			height: 30px
@@ -332,14 +334,54 @@ span.savechange
 // 
 // admin_create
 // 
-input, select
+input
 	background: #F4F4F4 
+	height: 30px
 	border: 1px solid #d5d5d5
 	padding-left: 10px
 	-webkit-border-radius: none 
 	border-radius: none 
 	+box
 
+.select
+	position: relative
+	+vertical
+	cursor: pointer
+	font-size: 13px
+	display: inline-block
+	width: 100%
+	height: 30px
+	vertical-align: top
+	text-align: left
+	background: #F4F4F4 
+	border: 1px solid #d5d5d5
+	padding: 5px 0 0 10px
+	+box
+	&:before
+		position: absolute
+		top: 11px
+		right: 7px
+		content: ""
+		+arr(8, 4, $blue, b)
+	&__text
+		position: relative
+	&__list
+		position: absolute
+		display: none
+		top: 100%
+		left: -1px
+		right: -1px
+		z-index: 100
+		overflow: hidden
+		background: #F4F4F4 
+		border: 1px solid #d5d5d5 
+		margin-top: -1px
+		border-top: none
+		li
+			cursor: pointer
+			padding: 5px 10px 
+			&:hover
+				background: #FFF
 
 .admin-header
 	font-size: 0
@@ -426,8 +468,6 @@ input, select
 			display: block
 			margin: 15px 0
 			font-weight: bold
-		input, select
-			height: 25px
 	&__name 
 		width: 693px
 		input
@@ -435,7 +475,8 @@ input, select
 	&__bonus
 		margin-right: 30px
 		display: inline-block
-		select
+		vertical-align: top
+		.select
 			width: 190px
 	&__link
 		display: inline-block
@@ -446,7 +487,7 @@ input, select
 		display: inline-block
 		vertical-align: top
 		height: 450px
-		select
+		.select
 			width: 195px
 			margin-bottom: 10px
 			display: block
@@ -462,18 +503,15 @@ input, select
 				background: $blue-h-b
 	&__select-university 
 		display: inline-block
+		vertical-align: top
 		width: 650px
 		+clr
 	&__university
-		display: block
 		position: relative
-		width: 650px
-		height: 75px
-		padding: 10px
+		padding: 10px 15px
 		margin-bottom: 10px
 		-webkit-box-shadow: 0 0 20px 0 #d5d5d5 
 		box-shadow: 0 0 20px 0 #d5d5d5 
-		+box
 		h5
 			font-weight: bold 
 			font-size: 13px
@@ -482,6 +520,8 @@ input, select
 		p 
 			font-size: 13px
 			display: inline-block
+		.university
+			line-height: 13px
 		.faculty
 			padding: 0
 .close
@@ -573,7 +613,7 @@ input.file-image
 		margin-right: 30px
 		input
 			width: 580px
-		select
+		.select
 			width: 580px
 	&__video
 		display: inline-block
@@ -607,7 +647,7 @@ input.file-image
 				+s(btn-create) 
 			&:hover
 				background: $green-h 
-			&-not-active
+			&:disabled
 				background: $grey 
 				&:hover
 					background: $grey
@@ -737,7 +777,7 @@ input.file-image
 		margin: 0 25px 0 10px	
 .btn_add-small
 	position: absolute
-	bottom: 5px
+	bottom: 0
 	right: 0
 	width: 130px
 	height: 40px
@@ -752,10 +792,11 @@ input.file-image
 	position: relative
 	background: $grey 
 	height: 40px
-	line-height: 40px
+	padding-top: 10px
 	font-size: 13px
 	+opensans
 	+clr
+	+box
 .item-name
 	float: left
 	font-weight: bold
@@ -774,10 +815,10 @@ input.file-image
 	margin-right: 50px
 	color: #666 
 .close_item
-	top: 10px
+	top: 11px
 	right: 15px
 .item-bottom
-	padding: 15px
+	padding: 10px 15px
 .btn_changes
 	width: 175px
 	height: 30px
@@ -789,7 +830,7 @@ input.file-image
 		cursor: auto
 .checkbox-border
 	margin-top: 10px
-	padding: 15px 0 5px 0
+	padding: 15px 0 10px 0
 	border-top: 1px solid $grey
 .access-checked
 	display: none
@@ -821,7 +862,7 @@ input.access-poll
 				cursor: default
 	span.down
 		display: block
-		margin: 440px auto 0
+		margin: 402px auto 0
 		cursor: pointer
 		+s(arr-down)
 		&:hover
@@ -832,10 +873,15 @@ input.access-poll
 				+s(arr-down-not-active)
 				cursor: default
 	&_opros
-		margin-top: 62px
+		margin-top: 68px
 		height: 614px
 		span.down
-			margin: 568px auto 0
+			margin: 528px auto 0
+	&_create
+		margin-right: -40px
+		margin-top: 48px
+		span.down
+			margin: 268px auto 0
 .poll-access
 	width: 500px
 	display: inline-block
@@ -854,11 +900,13 @@ input.access-poll
 // 
 .create-poll__inn-top
 	display: inline-block
+	vertical-align: top
 	margin-left: 20px
 	h4
 		margin-bottom: 10px
 	input
 		width: 230px
+		height: 30px
 		+box
 		+placeholder
 			padding-left: 20px
@@ -1429,6 +1477,12 @@ table.statistic__table
 	float: left
 	margin: 40px 0 100px 42px 
 
+.fancybox-nav
+	width: 60px
+.fancybox-nav span
+	visibility: visible
+
+
 
 // 
 // opros_uspeh
@@ -1534,3 +1588,5 @@ table.statistic__table
 	label
 		p
 			display: inline-block
+			
+

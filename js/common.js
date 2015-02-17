@@ -54,6 +54,46 @@ head.ready(function() {
     	$(this).siblings('.datepicker').trigger('focus');
     });
 
+    //select
+	$(document).ready(function() {
+	    $(document).click(function() {
+	        $(".js-select-list").hide();
+	        $(".js-select").removeClass("is-active");
+	    });
+	    function selectList() {
+	        var select = $(".js-select");
+	        var select_list = $(".js-select-list");
+	        $("body").on("click", ".js-select", function(event){
+	            if ($(this).hasClass("is-active")) {
+	                select.removeClass("is-active");
+	                select_list.hide();
+	            }
+	            else {
+	                select.removeClass("is-active");
+	                select_list.hide();
+	                $(this).find(".js-select-list").show();
+	                $(this).addClass("is-active");
+	            }
+	            event.stopPropagation();
+	        });
+	        $("body").on("click", ".js-select-list li", function(event){
+	            var id = $(this).attr("data-id");
+	            var text = $(this).text();
+	            $(this).parents(".js-select").find(".js-select-text").text(text);
+	            $(this).parents(".js-select").find(".js-select-input").val(id);
+	            $(this).parent().hide();
+	            $(this).parents(".js-select").removeClass("is-active");
+	            event.stopPropagation();
+	        });
+	    }  
+	    
+	    selectList();
+	    $("body").on("click", ".js-select", function(event){
+	        event.stopPropagation();
+	    });
+	    
+	});
+
     $(document).ready(function() {
 		$(".various").fancybox({
 			maxWidth	: 800,
@@ -62,9 +102,12 @@ head.ready(function() {
 			width		: '70%',
 			height		: '70%',
 			autoSize	: false,
-			closeClick	: false
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
 		});
 	});
+
 
 	function choose() {
         var number = $(".js-choose");
@@ -102,21 +145,27 @@ head.ready(function() {
 	    $('.js-form').each(function() {
 	        var form    = $(this),
 	            btn     = form.find('.js-button'),
-	            // input  = form.find('input:not([type="checkbox"], [type="radio"]), textarea'),
+	            input   = form.find('.js-input'),
 	            select  = form.find('.js-select'),
 	            selects = [],
 	            status  = []; // [false, false, false, true, ...]
 
-	        
 	        // check if input has value
 	        var checkStatus = function(input) {
-            	console.log(input.val());
-	            if (input.val() != "0") {
-	                return true;
-	            } else {
-	                return false;
-	                console.log(select.val());
-	            }
+            	if ( input.hasClass('js-select') ) {
+		            if (input.val() != "0") {
+		                return true;
+		            } else {
+		                return false;
+		            }
+            	};
+            	if ( input.hasClass('js-input') ) {
+            		 if ( input.val() ) {
+		                return true;
+		            } else {
+		                return false;
+		            }
+            	};
 	        };
 
 	        // toggle button
@@ -137,11 +186,17 @@ head.ready(function() {
 	            selects.push($(this));
 	            status.push(checkStatus($(this)));
 	        });
+	        if ( input.length ) {
+		        input.each(function() {
+		            selects.push($(this));
+		            status.push(checkStatus($(this)));
+		        });
+	        };
 
 	        toggleSubmitBtn();
 
-	        console.log(selects);
-	        console.log(status);
+	        // console.log(selects);
+	        // console.log(status);
 
 
 	        // check if
@@ -153,8 +208,8 @@ head.ready(function() {
 	                status[index] = check;
 	                toggleSubmitBtn();
 	                
-	                console.log(selects);
-	        		console.log(status);
+	          //       console.log(selects);
+	        		// console.log(status);
 	            });
 	        });
 	    });

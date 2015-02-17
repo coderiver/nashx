@@ -45,31 +45,34 @@
 					</div>
 				</div>
 			</div>
-			<div class="create-poll__bottom">
+			<div class="create-poll__bottom js-form">
 				<div class="l-center">
 					<div class="create-poll__in create-poll__question">
 						<h4>Вопрос №1</h4>
-						<input type="text">
+						<input class="js-input" type="text">
 					</div>
 					<div class="create-poll__in create-poll__video">
 						<h4>Ссылка на видео</h4>
-						<input type="text">
+						<input class="js-input" type="text">
 					</div>
 					<div class="create-poll__in create-poll__question">
 						<h4>Тип вопроса</h4>
-						<select>
-							<option>Много вариантов ответа (разрешен один)</option>
-							<option>sgbsfgbf</option>
-							<option>fgnsfgnsfg</option>
-							<option>fgnsfgns</option>
-							<option>fsgnsfgn</option>
-							<option>sfgnsfgn</option>
-							<option>sfgnsfgn</option>
-							<option>sgsfgbf</option>
-							<option>nfgdfg</option>
-							<option>dfgnfdgn</option>
-							<option>dfgngy</option>
-						</select>
+						<div class="select js-select">
+							<span class="select__text js-select-text">Много вариантов ответа (разрешен один)</span>
+							<input type="hidden" class="js-select-input js-input" value="0">
+							<ul class="select__list js-select-list">
+								<li data-id="0">Не важно</li>
+								<li data-id="2">Не важно</li>
+								<li data-id="3">Не важно</li>
+								<li data-id="4">Не важно</li>
+								<li data-id="2">Не важно</li>
+								<li data-id="3">Не важно</li>
+								<li data-id="4">Не важно</li>
+								<li data-id="2">Не важно</li>
+								<li data-id="3">Не важно</li>
+								<li data-id="4">Не важно</li>
+							</ul>
+						</div>
 					</div>
 					<div class="create-poll__in create-poll__show-answers">
 						<h4>Показ ответов</h4>
@@ -78,14 +81,14 @@
 					</div>
 					<div class="create-poll__in create-poll__answers">
 						<h4>Варианты ответа</h4>
-						<input type="text">
-						<input type="text">
-						<input type="text">
-						<input type="text">
-						<input type="text">
+						<input class="js-input" type="text">
+						<input class="js-input" type="text">
+						<input class="js-input" type="text">
+						<input class="js-input" type="text">
+						<input class="js-input" type="text">
 					</div>
 					<div class="create-poll__btns">
-						<button class="btn btn_create btn_create-not-active">сохранить изменения<span></span></button>
+						<button class="btn btn_create js-button">сохранить изменения<span></span></button>
 						<button class="btn btn_add">Следующий вопрос<span></span></button>
 						<div class="btn_prev">
 							<span></span>

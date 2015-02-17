@@ -37,25 +37,41 @@
 				<div class="create-poll__in create-poll__inn-top">
 					<h4>Поиск</h4>
 					<input type="text" placeholder="Ключевое слово">
-					<select class="search">
-						<option>Везде</option>
-						<option>Никогда</option>
-						<option>Иногда</option>
-						<option>Всегда</option>
-					</select>
+					<div class="search select js-select">
+						<span class="select__text js-select-text">Везде</span>
+						<input type="hidden" class="js-select-input" value="0">
+						<ul class="select__list js-select-list">
+							<li data-id="0">Никогда</li>
+							<li data-id="2">Иногда</li>
+							<li data-id="3">Всегда</li>
+						</ul>
+					</div>
 				</div>
 				<div class="create-poll__in create-poll__inn-top">
 					<h4>Рекламируются</h4>
-					<select class="advertised">
-						<option>Не важно</option>
-						<option>Не важно</option>
-					</select>
+					<div class="advertised select js-select">
+						<span class="select__text js-select-text">Не важно</span>
+						<input type="hidden" class="js-select-input" value="0">
+						<ul class="select__list js-select-list">
+							<li data-id="0">Не важно</li>
+							<li data-id="2">Не важно</li>
+							<li data-id="3">Не важно</li>
+							<li data-id="4">Не важно</li>
+						</ul>
+					</div>
 				</div>
 				<div class="create-poll__in create-poll__inn-top">
 					<h4>Статус</h4>
-					<select class="advertised">
-						<option>Только активные</option>
-					</select>
+					<div class="advertised select js-select">
+						<span class="select__text js-select-text">Только активные</span>
+						<input type="hidden" class="js-select-input" value="0">
+						<ul class="select__list js-select-list">
+							<li data-id="0">Только активные</li>
+							<li data-id="2">Только активные</li>
+							<li data-id="3">Только активные</li>
+							<li data-id="4">Только активные</li>
+						</ul>
+					</div>
 				</div>
 				<a class="btn-apply" href="#">Применить</a>
 				<a class="btn-reset" href="#">Сбросить</a>
