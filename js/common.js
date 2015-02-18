@@ -80,7 +80,7 @@ head.ready(function() {
 	            var id = $(this).attr("data-id");
 	            var text = $(this).text();
 	            $(this).parents(".js-select").find(".js-select-text").text(text);
-	            $(this).parents(".js-select").find(".js-select-input").val(id);
+	            $(this).parents(".js-select").find(".js-select-input").val(id).trigger('change');
 	            $(this).parent().hide();
 	            $(this).parents(".js-select").removeClass("is-active");
 	            event.stopPropagation();
@@ -140,80 +140,170 @@ head.ready(function() {
     }
     choose();
 
+	// (function() {
+
+	//     $('.js-form').each(function() {
+	//         var form    = $(this),
+	//             btn     = form.find('.js-button'),
+	//             input   = form.find('.js-input'),
+	//             select  = form.find('.js-select'),
+	//             selects = [],
+	//             status  = []; // [false, false, false, true, ...]
+
+	//         // check if input has value
+	//         var checkStatus = function(input) {
+ //            	if ( input.hasClass('js-select') ) {
+	// 	            if (input.val() != "0") {
+	// 	                return true;
+	// 	            } else {
+	// 	                return false;
+	// 	            }
+ //            	};
+ //            	if ( input.hasClass('js-input') ) {
+ //            		 if ( input.val() ) {
+	// 	                return true;
+	// 	            } else {
+	// 	                return false;
+	// 	            }
+ //            	};
+	//         };
+
+	//         // toggle button
+	//         var toggleSubmitBtn = function() {
+	//             if (status.indexOf(false) !== -1 ) {
+	//                 if ( !btn.is(':disabled') ) {
+	//                     btn.attr('disabled', 'disabled');
+	//                 }
+	//             } else {
+	//                 if ( btn.is(':disabled') ) {
+	//                     btn.removeAttr('disabled');
+	//                 }
+	//             }
+	//         };
+
+	//         // add each input to array and create status array
+	//         select.each(function() {
+	//             selects.push($(this));
+	//             status.push(checkStatus($(this)));
+	//         });
+	//         if ( input.length ) {
+	// 	        input.each(function() {
+	// 	            selects.push($(this));
+	// 	            status.push(checkStatus($(this)));
+	// 	        });
+	//         };
+
+	//         toggleSubmitBtn();
+
+	//         // console.log(selects);
+	//         // console.log(status);
+
+
+	//         // check if
+	//         $(selects).each(function() {
+	//             var currentElement = this;
+	//             $(currentElement).on('change', function() {
+	//                 var check = checkStatus($(currentElement));
+	//                 var index = selects.indexOf(currentElement);
+	//                 status[index] = check;
+	//                 toggleSubmitBtn();
+	                
+	//           //       console.log(selects);
+	//         		// console.log(status);
+	//             });
+	//         });
+	//     });
+
+	// }) ();
+
+	$('.js-custom-select').each(function() {
+        var select         = $(this),
+            wrapper        = select.parent(),
+            input          = select.siblings('input');
+
+        select.on('change', function() {
+            selectedOption = select.find('option:selected');
+            input.val(selectedOption.text());
+            input.trigger('change');
+        });
+
+        select.on('focus', function() {
+            input.addClass('is-active');
+        });
+
+        select.on('focusout', function() {
+            input.removeClass('is-active');
+        });
+
+    });
+	
 	(function() {
 
-	    $('.js-form').each(function() {
-	        var form    = $(this),
-	            btn     = form.find('.js-button'),
-	            input   = form.find('.js-input'),
-	            select  = form.find('.js-select'),
-	            selects = [],
-	            status  = []; // [false, false, false, true, ...]
+        $('.js-form').each(function() {
+            var form   = $(this),
+                btn    = form.find('.js-button'),
+                input  = form.find('.js-input'),
+                // select = form.find('.js-select'),
+                inputs = [],
+                status = []; // [false, false, false, true, ...]
 
-	        // check if input has value
-	        var checkStatus = function(input) {
-            	if ( input.hasClass('js-select') ) {
-		            if (input.val() != "0") {
-		                return true;
-		            } else {
-		                return false;
-		            }
-            	};
-            	if ( input.hasClass('js-input') ) {
-            		 if ( input.val() ) {
-		                return true;
-		            } else {
-		                return false;
-		            }
-            	};
-	        };
+            console.log(input);
+            // console.log(select);
+            // check if input has value
+            var checkStatus = function(input) {
+                if (input.val()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
 
-	        // toggle button
-	        var toggleSubmitBtn = function() {
-	            if (status.indexOf(false) !== -1 ) {
-	                if ( !btn.is(':disabled') ) {
-	                    btn.attr('disabled', 'disabled');
-	                }
-	            } else {
-	                if ( btn.is(':disabled') ) {
-	                    btn.removeAttr('disabled');
-	                }
-	            }
-	        };
+            // toggle button
+            var toggleSubmitBtn = function() {
+                if (status.indexOf(false) !== -1 ) {
+                    if ( !btn.is(':disabled') ) {
+                        btn.attr('disabled', 'disabled');
+                    }
+                } else {
+                    if ( btn.is(':disabled') ) {
+                        btn.removeAttr('disabled');
+                    }
+                }
+            };
 
-	        // add each input to array and create status array
-	        select.each(function() {
-	            selects.push($(this));
-	            status.push(checkStatus($(this)));
-	        });
-	        if ( input.length ) {
-		        input.each(function() {
-		            selects.push($(this));
-		            status.push(checkStatus($(this)));
-		        });
-	        };
+            // add each input to array and create status array
+            input.each(function() {
+                inputs.push($(this));
+                status.push(checkStatus($(this)));
+            });
 
-	        toggleSubmitBtn();
+            toggleSubmitBtn();
 
-	        // console.log(selects);
-	        // console.log(status);
+            console.log(inputs);
+            console.log(status);
 
 
-	        // check if
-	        $(selects).each(function() {
-	            var currentElement = this;
-	            $(currentElement).on('change', function() {
-	                var check = checkStatus($(currentElement));
-	                var index = selects.indexOf(currentElement);
-	                status[index] = check;
-	                toggleSubmitBtn();
+            $(inputs).each(function() {
+                var currentElement = this;
+                $(currentElement).on('change', function() {
+                    var check = checkStatus($(currentElement));
+                    var index = inputs.indexOf(currentElement);
+                    status[index] = check;
+                    toggleSubmitBtn();
 	                
-	          //       console.log(selects);
-	        		// console.log(status);
-	            });
-	        });
-	    });
+	           		console.log(status);
+                });
+                // if (select.length !== 0) {
+                //     $(currentElement).on('change', function() {
+                //         var check = checkStatus($(currentElement));
+                //         var index = inputs.indexOf(currentElement);
+                //         status[index] = check;
+                //         toggleSubmitBtn();
+                //     });
+                // }
+            });
+        });
 
-	}) ();
+	})();
 
 });

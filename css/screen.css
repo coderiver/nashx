@@ -336,7 +336,7 @@ input.access-poll { display: inline-block; width: 355px; height: 30px; margin: -
 .allpoll { display: inline-block; vertical-align: top; padding-right: 15px; color: #333333; font-size: 13px; font-family: "Open Sans", sans-serif; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .allpoll_checkbox { width: 240px; }
 .allpoll_checkbox label { display: block; margin-bottom: 10px; }
-.allpoll_checkbox label span { margin: 0 0 0 10px; }
+.allpoll_checkbox label span { margin: 0 0 0 10px; display: inline-block; vertical-align: top; }
 .allpoll_info { width: 255px; }
 .allpoll_info a { display: block; margin-bottom: 10px; color: #3d566e; }
 .allpoll_info a:hover { color: #152b3f; }
@@ -468,6 +468,9 @@ table.statistic__table { width: 870px; margin: 0; float: none; }
 .poll-question__row span { display: inline-block; }
 .poll-question__row:last-child { border: none; }
 .poll-question__in { padding: 0; }
+.poll-question__checkboxes label { display: block; }
+.poll-question__checkboxes label input { display: inline-block; vertical-align: top; }
+.poll-question__checkboxes label span { display: inline-block; vertical-align: middle; margin: 2px 0 5px 10px; }
 
 .choose { position: relative; display: inline-block; vertical-align: middle; height: 20px; width: 45px; padding-right: 20px; background: #3d566e; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .choose__input { display: block; padding: 0; height: 20px; width: 25px; text-align: center; font-size: 13px; font-weight: bold; color: #333333; }

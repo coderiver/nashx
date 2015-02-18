@@ -167,6 +167,70 @@
 	<!-- END footer -->
 </div>
 <!-- END out-->
+
+<!-- BEGIN popup -->
+<div class="overlay" style="display: none;">
+	<i></i>
+	<div class="popup">
+		<h3 class="h3">Добавление ВУЗа</h3>
+		<div class="popup__form js-form">
+			<div class="select js-select">
+				<span class="select__text js-select-text">Страна</span>
+				<input type="hidden" class="js-select-input js-input">
+				<ul class="select__list js-select-list">
+					<li data-id="0">Россия</li>
+					<li data-id="2">Украина</li>
+					<li data-id="3">Россия</li>
+					<li data-id="4">Украина</li>
+				</ul>
+			</div>
+			<div class="select js-select">
+				<span class="select__text js-select-text">Город</span>
+				<input type="hidden" class="js-select-input js-input">
+				<ul class="select__list js-select-list">
+					<li data-id="0">Москва</li>
+					<li data-id="2">Киев</li>
+					<li data-id="3">Москва</li>
+					<li data-id="4">Киев</li>
+				</ul>
+			</div>
+			<div class="select js-select">
+				<span class="select__text js-select-text">ВУЗ</span>
+				<input type="hidden" class="js-select-input js-input">
+				<ul class="select__list js-select-list">
+					<li data-id="0">МГИМО</li>
+					<li data-id="2">НТУУ "КПИ"</li>
+					<li data-id="3">МГИМО</li>
+					<li data-id="4">НТУУ "КПИ"</li>
+				</ul>
+			</div>
+			<div class="select js-select">
+				<span class="select__text js-select-text">Факультет</span>
+				<input type="hidden" class="js-select-input">
+				<ul class="select__list js-select-list">
+					<li data-id="0">Международных отношений</li>
+					<li data-id="2">Информатики и вычислительной техники</li>
+					<li data-id="3">Международных отношений</li>
+					<li data-id="4">Информатики и вычислительной техники</li>
+				</ul>
+			</div>
+			<div class="select js-select">
+				<span class="select__text js-select-text">Кафедра</span>
+				<input type="hidden" class="js-select-input">
+				<ul class="select__list js-select-list">
+					<li data-id="0">Дипломатии</li>
+					<li data-id="2">Технической кибернетики</li>
+					<li data-id="3">Дипломатии</li>
+					<li data-id="4">Технической кибернетики</li>
+				</ul>
+			</div>
+			<button class="js-button" type="submit" id="button">Сохранить</button>
+		</div>
+		<span class="close popup-close"></span>
+	</div>
+</div>
+<!-- END popup -->
+
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
