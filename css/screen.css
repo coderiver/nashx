@@ -130,7 +130,7 @@ span.savechange_field { background: url('../img/icons-sc9a25462fa.png') 0 -1047p
 .popup__form #button { width: 90px; height: 30px; padding: 0; text-align: center; background: #3a5268; color: white; font-size: 13px; font-family: "Open Sans", sans-serif; }
 .popup__form #button:disabled { background: #e2e2e2; cursor: default; }
 
-input { background: #f4f4f4; height: 30px; border: 1px solid #d5d5d5; padding-left: 10px; -webkit-border-radius: none; border-radius: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+input { background: #f4f4f4; height: 30px; border: 1px solid #d5d5d5; padding: 0 10px; -webkit-border-radius: none; border-radius: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .select { position: relative; text-align: center; font-size: 0; cursor: pointer; font-size: 13px; display: inline-block; width: 100%; height: 30px; vertical-align: top; text-align: left; background: #f4f4f4; border: 1px solid #d5d5d5; padding: 5px 0 0 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .select:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
@@ -170,6 +170,7 @@ input { background: #f4f4f4; height: 30px; border: 1px solid #d5d5d5; padding-le
 .create-poll__link input { width: 470px; }
 .create-poll__tags { margin-right: 30px; display: inline-block; vertical-align: top; height: 450px; }
 .create-poll__tags .select { width: 195px; margin-bottom: 10px; display: block; }
+.create-poll__tags .select__text { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 170px; display: block; }
 .create-poll__tags button { width: 85px; height: 25px; line-height: 25px; color: white; text-align: center; background: #3a5268; font-size: 13px; }
 .create-poll__tags button:hover { background: #396689; }
 .create-poll__select-university { display: inline-block; vertical-align: top; width: 650px; *zoom: 1; }
@@ -334,7 +335,7 @@ input.access-poll { display: inline-block; width: 355px; height: 30px; margin: -
 .create-poll__inn-bottom { margin-bottom: 10px; }
 
 .allpoll { display: inline-block; vertical-align: top; padding-right: 15px; color: #333333; font-size: 13px; font-family: "Open Sans", sans-serif; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.allpoll_checkbox { width: 240px; }
+.allpoll_checkbox { width: 240px; padding: 0; }
 .allpoll_checkbox label { display: block; margin-bottom: 10px; }
 .allpoll_checkbox label span { margin: 0 0 0 10px; display: inline-block; vertical-align: top; }
 .allpoll_info { width: 255px; }

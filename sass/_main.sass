@@ -338,7 +338,7 @@ input
 	background: #F4F4F4 
 	height: 30px
 	border: 1px solid #d5d5d5
-	padding-left: 10px
+	padding: 0 10px
 	-webkit-border-radius: none 
 	border-radius: none 
 	+box
@@ -491,6 +491,12 @@ input
 			width: 195px
 			margin-bottom: 10px
 			display: block
+			&__text
+				text-overflow: ellipsis
+				white-space: nowrap
+				overflow: hidden
+				width: 170px
+				display: block
 		button
 			width: 85px
 			height: 25px
@@ -1001,6 +1007,7 @@ input.access-poll
 	+box
 	&_checkbox
 		width: 240px
+		padding: 0
 		label
 			display: block
 			margin-bottom: 10px
