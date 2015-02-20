@@ -328,7 +328,7 @@ input.access-poll { display: inline-block; width: 355px; height: 30px; margin: -
 .allpoll-tools .allpoll-select select { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: none; display: inline-block; vertical-align: top; text-decoration: underline; width: 100px; padding-left: 8px; background: transparent url("../img/arr_select_down.png") no-repeat left center; }
 .allpoll-tools .date-range { float: right; }
 .allpoll-tools .date-range p { display: inline-block; vertical-align: middle; }
-.allpoll-tools .date-range .datepicker { width: 90px; height: 28px; z-index: 2; }
+.allpoll-tools .date-range .datepicker { width: 105px; height: 28px; z-index: 2; }
 .allpoll-tools .date-range .calendar { display: inline-block; position: relative; }
 .allpoll-tools .date-range .calendar span { position: absolute; top: 5px; right: 5px; z-index: 1; background: url('../img/icons-sc9a25462fa.png') 0 -677px no-repeat; width: 17px; height: 17px; }
 
