@@ -2,7 +2,12 @@
 body
 	width: 1000px
 	color: $d-grey
-
+	
+.out
+	position: relative
+	min-height: 600px 	
+	&.min-height
+		min-height: 853px  
 // 
 // index
 // 
@@ -200,28 +205,33 @@ span.savechange
 		margin-bottom: 35px
 .polls
 	position: relative
-	margin: -40px 0 40px 0
+	margin: -20px 0 40px
 	font-size: 0
+	&__wrap	
+		padding: 30px 25px
+		+box 
 	&__cycle
-		margin: 0 20px
+		width: 952px
+		margin: 0 auto 
+		padding: 0 10px 
+		+box 
 	&__item 
 		position: relative
 		display: inline-block
 		vertical-align: top
-		margin: 40px 0 40px 45px
 		width: 260px
 		height: 320px
 		background: #FFF 
 		text-transform: uppercase
-		-webkit-box-shadow: 0 0 30px 0 $d-grey 
-		box-shadow: 0 0 30px 0 $d-grey
-		overflow: visible
+		-webkit-box-shadow: 0 0 25px 0 $d-grey 
+		box-shadow: 0 0 25px 0 $d-grey
 		+opensans
 		h2
 			margin-top: 20px
 			line-height: 20px
 			font-weight: bold 
 			font-size: 13px 
+			white-space: normal
 		a
 			position: absolute
 			bottom: 0
@@ -458,6 +468,7 @@ input
 		padding-bottom: 15px
 	&__bottom
 		font-size: 0
+		//margin-bottom: 40px 
 	&__wrap
 		position: relative
 		display: inline-block
@@ -910,18 +921,27 @@ input.access-poll
 	margin-left: 20px
 	h4
 		margin-bottom: 10px
-	input
-		width: 230px
-		height: 30px
-		+box
-		+placeholder
-			padding-left: 20px
-			line-height: 15px
-			font-style: italic
-			font-size: 13px
-			color: #999
-			+opensans
-			+s(search)
+	.create-poll__search
+		position: relative
+		display: inline-block
+		&:before
+			content: ""
+			position: absolute
+			top: 8px
+			left: 9px 
+			+s(search)	
+		input
+			width: 230px
+			height: 30px
+			padding: 0 10px 0 30px
+			line-height: 1.2 
+			+box
+			+placeholder
+				font-style: italic
+				font-size: 13px
+				color: #999
+				+opensans
+
 .search
 	width: 130px
 	+box
@@ -1173,13 +1193,12 @@ input.access-poll
 	span.down
 		margin-top: 432px
 .create-poll__bottom-btns
-	height: 72px 
-	line-height: 72px
 	padding: 0 40px
-	background: $grey  
+	background: $grey 
+	+clr 
 	.btn_prev-statistic
 		float: left
-		line-height: 72px
+		margin-top: 14px 
 	.btn_statistic
 		text-transform: none
 		margin: 21px 0
@@ -1258,6 +1277,14 @@ table.statistic__table
 	&__in
 		display: inline-block
 		vertical-align: top
+	&__txt
+		font-weight: bold
+		font-size: 17px
+	&__link 
+		color: #3d566e
+		&:hover
+			color: #002b23
+
 .bonus
 	-webkit-box-shadow: 0 0 20px 0 #999 
 	box-shadow: 0 0 20px 0 #999
